@@ -6,28 +6,28 @@ import { useState } from "react";
 
 const featuredItems = [
   {
-    name: "Classic Espresso",
-    description: "Bold and rich, the foundation of great coffee",
-    price: "₹120",
-    image: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&h=400&fit=crop",
+    name: "Masala Chai",
+    description: "Aromatic tea with traditional Indian spices",
+    price: "₹30",
+    image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=400&fit=crop",
   },
   {
-    name: "Vanilla Latte",
-    description: "Smooth espresso with creamy vanilla notes",
-    price: "₹180",
-    image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400&h=400&fit=crop",
+    name: "Irani Chai",
+    description: "Hyderabadi style creamy layered tea",
+    price: "₹40",
+    image: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=400&h=400&fit=crop",
   },
   {
-    name: "Caramel Macchiato",
-    description: "Sweet caramel drizzled over velvety foam",
-    price: "₹200",
-    image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400&h=400&fit=crop",
+    name: "Kulhad Chai",
+    description: "Earthy clay pot chai with authentic taste",
+    price: "₹35",
+    image: "https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=400&h=400&fit=crop",
   },
   {
-    name: "Cold Brew",
-    description: "24-hour steeped for maximum smoothness",
-    price: "₹160",
-    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=400&fit=crop",
+    name: "Samosa",
+    description: "Crispy pastry filled with spiced potatoes",
+    price: "₹20",
+    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=400&fit=crop",
   },
 ];
 
