@@ -98,7 +98,7 @@ const Blog = () => {
             backgroundImage: "url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1920&h=600&fit=crop')",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container-custom relative z-10">
           <motion.div
@@ -107,11 +107,11 @@ const Blog = () => {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <span className="text-primary font-medium">Our Blog</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mt-2 mb-4">
+            <span className="text-cream font-medium">Our Blog</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mt-2 mb-4 text-white">
               Coffee Stories & Tips
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-white/80">
               Dive into the world of specialty coffee. From brewing guides to origin stories, 
               we share our passion and knowledge to help you appreciate every cup.
             </p>
