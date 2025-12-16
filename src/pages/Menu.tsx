@@ -12,44 +12,44 @@ const menuCategories = [
 
 const menuItems = {
   espresso: [
-    { name: "Classic Espresso", description: "Bold, rich single shot of pure coffee essence", price: "$3.50" },
-    { name: "Double Espresso", description: "Twice the intensity, twice the flavor", price: "$4.50" },
-    { name: "Espresso Macchiato", description: "Espresso marked with a dollop of velvety foam", price: "$4.00" },
-    { name: "Ristretto", description: "Concentrated espresso with sweet, intense notes", price: "$3.75" },
-    { name: "Lungo", description: "Extended extraction for a milder, larger cup", price: "$4.00" },
-    { name: "Americano", description: "Espresso with hot water for a smooth, full-bodied taste", price: "$4.25" },
+    { name: "Classic Espresso", description: "Bold, rich single shot of pure coffee essence", price: "₹120" },
+    { name: "Double Espresso", description: "Twice the intensity, twice the flavor", price: "₹150" },
+    { name: "Espresso Macchiato", description: "Espresso marked with a dollop of velvety foam", price: "₹140" },
+    { name: "Ristretto", description: "Concentrated espresso with sweet, intense notes", price: "₹130" },
+    { name: "Lungo", description: "Extended extraction for a milder, larger cup", price: "₹140" },
+    { name: "Americano", description: "Espresso with hot water for a smooth, full-bodied taste", price: "₹140" },
   ],
   cappuccino: [
-    { name: "Classic Cappuccino", description: "Perfect balance of espresso, steamed milk, and foam", price: "$5.00" },
-    { name: "Dry Cappuccino", description: "Extra foam for those who love the texture", price: "$5.00" },
-    { name: "Wet Cappuccino", description: "More steamed milk for a creamier experience", price: "$5.00" },
-    { name: "Flavored Cappuccino", description: "Your choice of vanilla, hazelnut, or caramel", price: "$5.50" },
-    { name: "Iced Cappuccino", description: "Cold version of our classic, refreshingly bold", price: "$5.50" },
+    { name: "Classic Cappuccino", description: "Perfect balance of espresso, steamed milk, and foam", price: "₹160" },
+    { name: "Dry Cappuccino", description: "Extra foam for those who love the texture", price: "₹160" },
+    { name: "Wet Cappuccino", description: "More steamed milk for a creamier experience", price: "₹160" },
+    { name: "Flavored Cappuccino", description: "Your choice of vanilla, hazelnut, or caramel", price: "₹180" },
+    { name: "Iced Cappuccino", description: "Cold version of our classic, refreshingly bold", price: "₹180" },
   ],
   latte: [
-    { name: "Classic Latte", description: "Smooth espresso with silky steamed milk", price: "$5.00" },
-    { name: "Vanilla Latte", description: "Sweet vanilla notes in every creamy sip", price: "$5.50" },
-    { name: "Caramel Latte", description: "Rich caramel swirled through velvety milk", price: "$5.50" },
-    { name: "Hazelnut Latte", description: "Nutty aroma meets smooth espresso", price: "$5.50" },
-    { name: "Mocha Latte", description: "Chocolate lovers' dream with espresso kick", price: "$6.00" },
-    { name: "Oat Milk Latte", description: "Plant-based perfection with oat milk", price: "$5.75" },
-    { name: "Matcha Latte", description: "Premium Japanese matcha with steamed milk", price: "$6.00" },
+    { name: "Classic Latte", description: "Smooth espresso with silky steamed milk", price: "₹170" },
+    { name: "Vanilla Latte", description: "Sweet vanilla notes in every creamy sip", price: "₹180" },
+    { name: "Caramel Latte", description: "Rich caramel swirled through velvety milk", price: "₹180" },
+    { name: "Hazelnut Latte", description: "Nutty aroma meets smooth espresso", price: "₹180" },
+    { name: "Mocha Latte", description: "Chocolate lovers' dream with espresso kick", price: "₹200" },
+    { name: "Oat Milk Latte", description: "Plant-based perfection with oat milk", price: "₹190" },
+    { name: "Matcha Latte", description: "Premium Japanese matcha with steamed milk", price: "₹200" },
   ],
   "cold-brew": [
-    { name: "Classic Cold Brew", description: "24-hour steeped for ultimate smoothness", price: "$4.50" },
-    { name: "Vanilla Cold Brew", description: "Cold brew with a hint of vanilla sweetness", price: "$5.00" },
-    { name: "Nitro Cold Brew", description: "Nitrogen-infused for creamy, cascading perfection", price: "$5.50" },
-    { name: "Cold Brew Float", description: "Cold brew topped with vanilla ice cream", price: "$6.50" },
-    { name: "Mocha Cold Brew", description: "Chocolate-infused cold brew goodness", price: "$5.50" },
+    { name: "Classic Cold Brew", description: "24-hour steeped for ultimate smoothness", price: "₹160" },
+    { name: "Vanilla Cold Brew", description: "Cold brew with a hint of vanilla sweetness", price: "₹180" },
+    { name: "Nitro Cold Brew", description: "Nitrogen-infused for creamy, cascading perfection", price: "₹200" },
+    { name: "Cold Brew Float", description: "Cold brew topped with vanilla ice cream", price: "₹220" },
+    { name: "Mocha Cold Brew", description: "Chocolate-infused cold brew goodness", price: "₹190" },
   ],
   desserts: [
-    { name: "Chocolate Croissant", description: "Buttery, flaky, filled with dark chocolate", price: "$4.50" },
-    { name: "Blueberry Muffin", description: "Fresh blueberries in a soft, moist muffin", price: "$4.00" },
-    { name: "Banana Bread", description: "Homemade with walnuts and a hint of cinnamon", price: "$4.25" },
-    { name: "Tiramisu", description: "Classic Italian dessert with espresso-soaked layers", price: "$7.00" },
-    { name: "New York Cheesecake", description: "Rich, creamy, with graham cracker crust", price: "$6.50" },
-    { name: "Avocado Toast", description: "Sourdough with smashed avocado and everything seasoning", price: "$8.00" },
-    { name: "Grilled Cheese", description: "Three cheese blend on artisan bread", price: "$7.50" },
+    { name: "Chocolate Croissant", description: "Buttery, flaky, filled with dark chocolate", price: "₹150" },
+    { name: "Blueberry Muffin", description: "Fresh blueberries in a soft, moist muffin", price: "₹130" },
+    { name: "Banana Bread", description: "Homemade with walnuts and a hint of cinnamon", price: "₹140" },
+    { name: "Tiramisu", description: "Classic Italian dessert with espresso-soaked layers", price: "₹250" },
+    { name: "New York Cheesecake", description: "Rich, creamy, with graham cracker crust", price: "₹220" },
+    { name: "Avocado Toast", description: "Sourdough with smashed avocado and everything seasoning", price: "₹280" },
+    { name: "Grilled Cheese Sandwich", description: "Three cheese blend on artisan bread", price: "₹250" },
   ],
 };
 
@@ -169,7 +169,7 @@ const Menu = () => {
               Skip the line! Order ahead via WhatsApp and have your favorite drinks ready when you arrive.
             </p>
             <a
-              href="https://wa.me/1234567890?text=Hi! I'd like to place an order from the menu."
+              href="https://wa.me/918333833659?text=Hi! I'd like to place an order from the menu."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors"

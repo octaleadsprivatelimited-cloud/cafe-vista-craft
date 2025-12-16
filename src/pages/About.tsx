@@ -28,31 +28,31 @@ const values = [
 
 const team = [
   {
-    name: "Marcus Chen",
+    name: "Rajesh Kumar",
     role: "Founder & Head Roaster",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-    bio: "With 15 years in specialty coffee, Marcus turned his obsession into Brew & Bean.",
+    bio: "With 12 years in specialty coffee, Rajesh turned his obsession into Sardar Cafe.",
   },
   {
-    name: "Sofia Rodriguez",
+    name: "Priya Menon",
     role: "Head Barista",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-    bio: "Award-winning barista champion who believes every cup tells a unique story.",
+    bio: "Award-winning barista who believes every cup tells a unique story.",
   },
   {
-    name: "James Williams",
+    name: "Arjun Reddy",
     role: "Coffee Sourcer",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-    bio: "Travels the world to find the most exceptional beans from sustainable farms.",
+    bio: "Travels across India and beyond to find the most exceptional beans.",
   },
 ];
 
 const milestones = [
-  { year: "2015", event: "Brew & Bean opens its doors in NYC" },
-  { year: "2017", event: "Launched our signature house blend" },
-  { year: "2019", event: "Won 'Best Local Coffee Shop' award" },
-  { year: "2021", event: "Started direct trade partnerships" },
-  { year: "2023", event: "Expanded to weekend brunch service" },
+  { year: "2018", event: "Sardar Cafe opens its doors in Hyderabad" },
+  { year: "2019", event: "Launched our signature house blend" },
+  { year: "2020", event: "Expanded with delivery services" },
+  { year: "2022", event: "Won 'Best Local Cafe' in Hyderabad" },
+  { year: "2024", event: "Introduced specialty single-origin coffees" },
 ];
 
 const containerVariants = {
@@ -90,7 +90,7 @@ const About = () => {
           >
             <span className="text-primary font-medium">Our Story</span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mt-2 mb-4">
-              About Brew & Bean
+              About Sardar Cafe
             </h1>
             <p className="text-lg text-muted-foreground">
               More than just a coffee shop – we're a community built on passion, 
@@ -116,20 +116,20 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  It all began with a small kitchen, a secondhand espresso machine, and an 
-                  unshakeable belief that great coffee could bring people together. In 2015, 
-                  Marcus Chen took a leap of faith, leaving his corporate job to pursue his 
-                  lifelong passion for specialty coffee.
+                  It all began with a small kitchen, a passion for quality coffee, and an 
+                  unshakeable belief that great coffee could bring people together. In 2018, 
+                  Rajesh Kumar took a leap of faith, leaving his corporate career to pursue his 
+                  lifelong passion for specialty coffee in Hyderabad.
                 </p>
                 <p>
-                  What started as a tiny corner café has grown into a beloved neighborhood 
-                  institution. But our mission remains the same: to serve exceptional coffee 
+                  What started as a cozy corner café in Miyapur has grown into a beloved 
+                  neighborhood institution. But our mission remains the same: to serve exceptional coffee 
                   in a space that feels like home, where strangers become friends and every 
                   visit is a moment of genuine connection.
                 </p>
                 <p>
-                  Today, Brew & Bean stands as a testament to what happens when passion meets 
-                  persistence. We've served over 500,000 cups of coffee, but we still treat 
+                  Today, Sardar Cafe stands as a testament to what happens when passion meets 
+                  persistence. We've served thousands of cups of coffee, but we still treat 
                   every single one like it's our first – with care, attention, and a little 
                   bit of magic.
                 </p>
@@ -149,7 +149,7 @@ const About = () => {
                 className="rounded-2xl shadow-xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-lg">
-                <div className="text-4xl font-serif font-bold">9+</div>
+                <div className="text-4xl font-serif font-bold">6+</div>
                 <div className="text-sm opacity-80">Years of Excellence</div>
               </div>
             </motion.div>
@@ -299,7 +299,7 @@ const About = () => {
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               Whether you're a coffee connoisseur or just looking for a cozy spot to unwind, 
-              we'd love to welcome you to our little corner of the world.
+              we'd love to welcome you to our little corner of Hyderabad.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
@@ -307,7 +307,7 @@ const About = () => {
               </Button>
               <Button asChild variant="outline" size="lg">
                 <a
-                  href="https://wa.me/1234567890?text=Hi! I'd like to learn more about Brew & Bean."
+                  href="https://wa.me/918333833659?text=Hi! I'd like to learn more about Sardar Cafe."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

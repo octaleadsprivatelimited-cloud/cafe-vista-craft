@@ -43,7 +43,7 @@ export const Navbar = () => {
         <Link to="/" className="flex items-center gap-2 group">
           <Coffee className="h-8 w-8 text-primary transition-transform group-hover:rotate-12" />
           <span className="font-serif text-xl md:text-2xl font-semibold text-foreground">
-            Brew & Bean
+            Sardar Cafe
           </span>
         </Link>
 
@@ -75,7 +75,7 @@ export const Navbar = () => {
           <ThemeToggle />
           <Button asChild>
             <a
-              href="https://wa.me/1234567890?text=Hi! I'd like to place an order."
+              href="https://wa.me/918333833659?text=Hi! I'd like to place an order."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -135,7 +135,7 @@ export const Navbar = () => {
               >
                 <Button asChild className="w-full">
                   <a
-                    href="https://wa.me/1234567890?text=Hi! I'd like to place an order."
+                    href="https://wa.me/918333833659?text=Hi! I'd like to place an order."
                     target="_blank"
                     rel="noopener noreferrer"
                   >

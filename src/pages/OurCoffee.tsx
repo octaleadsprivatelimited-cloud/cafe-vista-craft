@@ -5,27 +5,27 @@ import { Link } from "react-router-dom";
 
 const origins = [
   {
-    country: "Ethiopia",
-    region: "Yirgacheffe",
-    flavor: "Floral, Citrus, Bright",
+    country: "Karnataka",
+    region: "Coorg",
+    flavor: "Chocolatey, Spicy, Full-bodied",
     image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=400&h=300&fit=crop",
   },
   {
-    country: "Colombia",
-    region: "Huila",
-    flavor: "Caramel, Nutty, Balanced",
+    country: "Kerala",
+    region: "Wayanad",
+    flavor: "Fruity, Citrus, Bright",
     image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=300&fit=crop",
   },
   {
-    country: "Guatemala",
-    region: "Antigua",
-    flavor: "Chocolate, Spice, Full-bodied",
+    country: "Tamil Nadu",
+    region: "Nilgiris",
+    flavor: "Floral, Tea-like, Delicate",
     image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=400&h=300&fit=crop",
   },
   {
-    country: "Brazil",
-    region: "Minas Gerais",
-    flavor: "Smooth, Sweet, Low Acidity",
+    country: "Ethiopia",
+    region: "Yirgacheffe",
+    flavor: "Floral, Citrus, Wine-like",
     image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=300&fit=crop",
   },
 ];
@@ -35,14 +35,14 @@ const brewingMethods = [
     name: "Espresso",
     description: "High-pressure extraction for bold, concentrated flavor",
     time: "25-30 seconds",
-    temp: "200°F",
+    temp: "93°C",
     icon: Coffee,
   },
   {
     name: "Pour Over",
     description: "Manual brewing for clarity and nuanced flavors",
     time: "3-4 minutes",
-    temp: "195-205°F",
+    temp: "90-96°C",
     icon: Timer,
   },
   {
@@ -56,7 +56,7 @@ const brewingMethods = [
     name: "French Press",
     description: "Full immersion for rich, full-bodied experience",
     time: "4 minutes",
-    temp: "200°F",
+    temp: "93°C",
     icon: Timer,
   },
 ];
@@ -65,12 +65,12 @@ const qualityStandards = [
   {
     icon: Globe,
     title: "Direct Trade",
-    description: "We work directly with farmers, ensuring fair prices and sustainable practices.",
+    description: "We work directly with Indian farmers, ensuring fair prices and sustainable practices.",
   },
   {
     icon: Leaf,
     title: "Organic Focus",
-    description: "80% of our beans are certified organic, grown without harmful pesticides.",
+    description: "Most of our beans are organic, grown without harmful pesticides.",
   },
   {
     icon: Award,
@@ -122,7 +122,7 @@ const OurCoffee = () => {
               Our Coffee
             </h1>
             <p className="text-lg text-muted-foreground">
-              Discover the journey of our exceptional beans – from remote mountain farms 
+              Discover the journey of our exceptional beans – from Indian coffee estates 
               to your perfect cup. Quality is our obsession.
             </p>
           </motion.div>
@@ -143,10 +143,10 @@ const OurCoffee = () => {
               Sourcing
             </motion.span>
             <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-serif font-bold mt-2 mb-4">
-              From the World's Finest Regions
+              From India's Finest Coffee Regions
             </motion.h2>
             <motion.p variants={itemVariants} className="text-muted-foreground max-w-2xl mx-auto">
-              We travel to coffee-growing regions around the world to establish direct relationships 
+              We source primarily from India's renowned coffee-growing regions, establishing direct relationships 
               with farmers who share our commitment to quality and sustainability.
             </motion.p>
           </motion.div>
@@ -196,11 +196,11 @@ const OurCoffee = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Roasting is where science meets art. Our head roaster, Marcus, has spent 
-                  over a decade perfecting profiles that bring out each origin's unique character.
+                  Roasting is where science meets art. Our head roaster has spent 
+                  years perfecting profiles that bring out each origin's unique character.
                 </p>
                 <p>
-                  We roast in small batches of just 12 pounds at a time, monitoring temperature 
+                  We roast in small batches, monitoring temperature 
                   curves and development time to ensure consistency and peak flavor development.
                 </p>
                 <p>
@@ -211,7 +211,7 @@ const OurCoffee = () => {
               </div>
               <div className="grid grid-cols-3 gap-4 mt-8">
                 <div className="text-center p-4 bg-card rounded-lg">
-                  <div className="text-2xl font-serif font-bold text-primary">12lb</div>
+                  <div className="text-2xl font-serif font-bold text-primary">5kg</div>
                   <div className="text-xs text-muted-foreground">Batch Size</div>
                 </div>
                 <div className="text-center p-4 bg-card rounded-lg">
@@ -219,7 +219,7 @@ const OurCoffee = () => {
                   <div className="text-xs text-muted-foreground">Avg Roast Time</div>
                 </div>
                 <div className="text-center p-4 bg-card rounded-lg">
-                  <div className="text-2xl font-serif font-bold text-primary">400°F</div>
+                  <div className="text-2xl font-serif font-bold text-primary">205°C</div>
                   <div className="text-xs text-muted-foreground">Peak Temp</div>
                 </div>
               </div>
@@ -357,7 +357,7 @@ const OurCoffee = () => {
               </Button>
               <Button asChild variant="outline" size="lg">
                 <a
-                  href="https://wa.me/1234567890?text=Hi! I'd like to order some coffee beans."
+                  href="https://wa.me/918333833659?text=Hi! I'd like to order some coffee beans."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
