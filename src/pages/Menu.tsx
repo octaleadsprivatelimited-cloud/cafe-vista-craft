@@ -79,7 +79,7 @@ const Menu = () => {
             backgroundImage: "url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&h=600&fit=crop')",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         <div className="container-custom relative z-10">
           <motion.div
@@ -88,11 +88,11 @@ const Menu = () => {
             transition={{ duration: 0.6 }}
             className="max-w-2xl"
           >
-            <span className="text-primary font-medium">Discover</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mt-2 mb-4">
+            <span className="text-cream font-medium">Discover</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mt-2 mb-4 text-white">
               Our Menu
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-white/80">
               Explore our carefully curated selection of handcrafted beverages and delicious treats, 
               made with love and the finest ingredients.
             </p>
