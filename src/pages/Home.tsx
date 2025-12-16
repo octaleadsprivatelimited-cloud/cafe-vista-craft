@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Coffee, Leaf, Users, Star, MapPin, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Coffee, Leaf, Users, Star, MapPin, Clock, ArrowRight, ChevronLeft, ChevronRight, Phone, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 const featuredItems = [
@@ -126,20 +126,27 @@ const Home = () => {
               Experience the art of specialty coffee in a warm, inviting atmosphere. Every cup tells a story of quality, 
               passion, and the perfect roast.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="text-base">
                 <Link to="/menu">
                   View Menu
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-base border-white text-white hover:bg-white hover:text-primary">
+              <Button asChild size="lg" className="text-base">
+                <Link to="/contact">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Contact Us
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-base border-green-500 text-green-500 hover:bg-green-500 hover:text-white">
                 <a
                   href="https://wa.me/918333833659?text=Hi! I'd like to place an order."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Order Now
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  WhatsApp
                 </a>
               </Button>
             </div>
