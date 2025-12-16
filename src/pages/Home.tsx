@@ -412,39 +412,6 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="section-padding bg-accent text-accent-foreground">
-        <div className="container-custom text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
-              Ready for Your Perfect Cup?
-            </h2>
-            <p className="text-accent-foreground/80 text-lg mb-8 max-w-2xl mx-auto">
-              Visit us today or order ahead via WhatsApp. We can't wait to serve you the perfect brew.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary">
-                <Link to="/menu">Explore Menu</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent">
-                <a
-                  href="https://wa.me/918333833659?text=Hi! I'd like to place an order."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Order on WhatsApp
-                </a>
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </>
   );
 };
