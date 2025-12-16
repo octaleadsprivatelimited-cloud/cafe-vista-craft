@@ -1,55 +1,48 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Coffee, IceCream } from "lucide-react";
+import { Coffee, IceCream, Leaf } from "lucide-react";
 
 const menuCategories = [
-  { id: "espresso", name: "Espresso", icon: Coffee },
-  { id: "cappuccino", name: "Cappuccino", icon: Coffee },
-  { id: "latte", name: "Latte", icon: Coffee },
-  { id: "cold-brew", name: "Cold Brew", icon: Coffee },
-  { id: "desserts", name: "Desserts & Snacks", icon: IceCream },
+  { id: "chai", name: "Chai", icon: Coffee },
+  { id: "special-chai", name: "Special Chai", icon: Leaf },
+  { id: "cold-drinks", name: "Cold Drinks", icon: Coffee },
+  { id: "snacks", name: "Snacks", icon: IceCream },
 ];
 
 const menuItems = {
-  espresso: [
-    { name: "Classic Espresso", description: "Bold, rich single shot of pure coffee essence", price: "₹120" },
-    { name: "Double Espresso", description: "Twice the intensity, twice the flavor", price: "₹150" },
-    { name: "Espresso Macchiato", description: "Espresso marked with a dollop of velvety foam", price: "₹140" },
-    { name: "Ristretto", description: "Concentrated espresso with sweet, intense notes", price: "₹130" },
-    { name: "Lungo", description: "Extended extraction for a milder, larger cup", price: "₹140" },
-    { name: "Americano", description: "Espresso with hot water for a smooth, full-bodied taste", price: "₹140" },
+  chai: [
+    { name: "Cutting Chai", description: "Classic half cup of strong, refreshing tea", price: "₹15" },
+    { name: "Regular Chai", description: "Full cup of perfectly brewed Indian tea", price: "₹20" },
+    { name: "Masala Chai", description: "Aromatic tea with traditional Indian spices", price: "₹30" },
+    { name: "Adrak Chai", description: "Ginger-infused tea for a warm, spicy kick", price: "₹25" },
+    { name: "Elaichi Chai", description: "Cardamom-flavored tea with rich aroma", price: "₹30" },
+    { name: "Tulsi Chai", description: "Holy basil tea with immunity-boosting benefits", price: "₹30" },
   ],
-  cappuccino: [
-    { name: "Classic Cappuccino", description: "Perfect balance of espresso, steamed milk, and foam", price: "₹160" },
-    { name: "Dry Cappuccino", description: "Extra foam for those who love the texture", price: "₹160" },
-    { name: "Wet Cappuccino", description: "More steamed milk for a creamier experience", price: "₹160" },
-    { name: "Flavored Cappuccino", description: "Your choice of vanilla, hazelnut, or caramel", price: "₹180" },
-    { name: "Iced Cappuccino", description: "Cold version of our classic, refreshingly bold", price: "₹180" },
+  "special-chai": [
+    { name: "Kesar Chai", description: "Premium saffron-infused royal tea", price: "₹50" },
+    { name: "Kulhad Chai", description: "Earthy clay pot chai with authentic taste", price: "₹35" },
+    { name: "Irani Chai", description: "Hyderabadi style creamy layered tea", price: "₹40" },
+    { name: "Tandoori Chai", description: "Smoky flavored chai served in hot clay cup", price: "₹45" },
+    { name: "Rose Chai", description: "Fragrant rose petal infused tea", price: "₹40" },
+    { name: "Butter Chai", description: "Rich and creamy tea with butter", price: "₹45" },
   ],
-  latte: [
-    { name: "Classic Latte", description: "Smooth espresso with silky steamed milk", price: "₹170" },
-    { name: "Vanilla Latte", description: "Sweet vanilla notes in every creamy sip", price: "₹180" },
-    { name: "Caramel Latte", description: "Rich caramel swirled through velvety milk", price: "₹180" },
-    { name: "Hazelnut Latte", description: "Nutty aroma meets smooth espresso", price: "₹180" },
-    { name: "Mocha Latte", description: "Chocolate lovers' dream with espresso kick", price: "₹200" },
-    { name: "Oat Milk Latte", description: "Plant-based perfection with oat milk", price: "₹190" },
-    { name: "Matcha Latte", description: "Premium Japanese matcha with steamed milk", price: "₹200" },
+  "cold-drinks": [
+    { name: "Cold Coffee", description: "Chilled coffee with ice cream", price: "₹60" },
+    { name: "Lassi", description: "Traditional sweet yogurt drink", price: "₹40" },
+    { name: "Mango Lassi", description: "Creamy lassi with fresh mango pulp", price: "₹50" },
+    { name: "Badam Milk", description: "Almond flavored chilled milk", price: "₹50" },
+    { name: "Lemon Soda", description: "Refreshing lime soda with mint", price: "₹30" },
+    { name: "Jaljeera", description: "Cumin-flavored digestive drink", price: "₹30" },
   ],
-  "cold-brew": [
-    { name: "Classic Cold Brew", description: "24-hour steeped for ultimate smoothness", price: "₹160" },
-    { name: "Vanilla Cold Brew", description: "Cold brew with a hint of vanilla sweetness", price: "₹180" },
-    { name: "Nitro Cold Brew", description: "Nitrogen-infused for creamy, cascading perfection", price: "₹200" },
-    { name: "Cold Brew Float", description: "Cold brew topped with vanilla ice cream", price: "₹220" },
-    { name: "Mocha Cold Brew", description: "Chocolate-infused cold brew goodness", price: "₹190" },
-  ],
-  desserts: [
-    { name: "Chocolate Croissant", description: "Buttery, flaky, filled with dark chocolate", price: "₹150" },
-    { name: "Blueberry Muffin", description: "Fresh blueberries in a soft, moist muffin", price: "₹130" },
-    { name: "Banana Bread", description: "Homemade with walnuts and a hint of cinnamon", price: "₹140" },
-    { name: "Tiramisu", description: "Classic Italian dessert with espresso-soaked layers", price: "₹250" },
-    { name: "New York Cheesecake", description: "Rich, creamy, with graham cracker crust", price: "₹220" },
-    { name: "Avocado Toast", description: "Sourdough with smashed avocado and everything seasoning", price: "₹280" },
-    { name: "Grilled Cheese Sandwich", description: "Three cheese blend on artisan bread", price: "₹250" },
+  snacks: [
+    { name: "Samosa", description: "Crispy pastry filled with spiced potatoes", price: "₹20" },
+    { name: "Kachori", description: "Flaky deep-fried snack with dal filling", price: "₹25" },
+    { name: "Bread Pakora", description: "Spiced bread fritters, crispy and golden", price: "₹30" },
+    { name: "Vada Pav", description: "Mumbai's favorite potato burger", price: "₹30" },
+    { name: "Bun Maska", description: "Soft bun with generous butter", price: "₹25" },
+    { name: "Osmania Biscuit", description: "Classic Hyderabadi tea-time biscuit", price: "₹15" },
+    { name: "Khari Biscuit", description: "Flaky, buttery puff pastry", price: "₹20" },
+    { name: "Maggi", description: "Hot and spicy instant noodles", price: "₹40" },
   ],
 };
 
@@ -67,7 +60,7 @@ const itemVariants = {
 };
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState("espresso");
+  const [activeCategory, setActiveCategory] = useState("chai");
 
   return (
     <>
