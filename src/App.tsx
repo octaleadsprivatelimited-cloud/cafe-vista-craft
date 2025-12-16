@@ -8,6 +8,10 @@ import { Layout } from "@/components/layout/Layout";
 import Home from "@/pages/Home";
 import Menu from "@/pages/Menu";
 import Contact from "@/pages/Contact";
+import About from "@/pages/About";
+import OurCoffee from "@/pages/OurCoffee";
+import Gallery from "@/pages/Gallery";
+import Blog from "@/pages/Blog";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,11 +28,10 @@ const App = () => (
               <Route path="/" element={<Home />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/contact" element={<Contact />} />
-              {/* Placeholder routes for Phase 2+ */}
-              <Route path="/about" element={<NotFound />} />
-              <Route path="/our-coffee" element={<NotFound />} />
-              <Route path="/gallery" element={<NotFound />} />
-              <Route path="/blog" element={<NotFound />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/our-coffee" element={<OurCoffee />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/blog" element={<Blog />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
