@@ -8,25 +8,25 @@ const featuredItems = [
   {
     name: "Classic Espresso",
     description: "Bold and rich, the foundation of great coffee",
-    price: "$3.50",
+    price: "₹120",
     image: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400&h=400&fit=crop",
   },
   {
     name: "Vanilla Latte",
     description: "Smooth espresso with creamy vanilla notes",
-    price: "$5.00",
+    price: "₹180",
     image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400&h=400&fit=crop",
   },
   {
     name: "Caramel Macchiato",
     description: "Sweet caramel drizzled over velvety foam",
-    price: "$5.50",
+    price: "₹200",
     image: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400&h=400&fit=crop",
   },
   {
     name: "Cold Brew",
     description: "24-hour steeped for maximum smoothness",
-    price: "$4.50",
+    price: "₹160",
     image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&h=400&fit=crop",
   },
 ];
@@ -35,7 +35,7 @@ const features = [
   {
     icon: Coffee,
     title: "Fresh Beans",
-    description: "We source the finest beans from sustainable farms around the world, roasted weekly.",
+    description: "We source the finest beans from sustainable farms, roasted weekly for peak freshness.",
   },
   {
     icon: Users,
@@ -51,19 +51,19 @@ const features = [
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
+    name: "Priya Sharma",
     role: "Regular Customer",
-    content: "Brew & Bean has become my daily ritual. The espresso is consistently perfect, and the atmosphere feels like a second home.",
+    content: "Sardar Cafe has become my daily ritual. The espresso is consistently perfect, and the atmosphere feels like a second home.",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
   },
   {
-    name: "James Cooper",
+    name: "Rahul Verma",
     role: "Coffee Enthusiast",
-    content: "I've traveled to coffee shops worldwide, and Brew & Bean stands out. Their cold brew is simply unmatched in quality.",
+    content: "I've been to many cafes in Hyderabad, and Sardar Cafe stands out. Their cold brew is simply unmatched in quality.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
   },
   {
-    name: "Emily Chen",
+    name: "Ananya Reddy",
     role: "Remote Worker",
     content: "The perfect spot for remote work. Great WiFi, amazing coffee, and the staff always remembers my order!",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
@@ -115,7 +115,7 @@ const Home = () => {
             className="max-w-2xl"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              Welcome to Brew & Bean
+              Welcome to Sardar Cafe
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-foreground leading-tight mb-6">
               Crafted Coffee,
@@ -135,7 +135,7 @@ const Home = () => {
               </Button>
               <Button asChild variant="outline" size="lg" className="text-base">
                 <a
-                  href="https://wa.me/1234567890?text=Hi! I'd like to place an order."
+                  href="https://wa.me/918333833659?text=Hi! I'd like to place an order."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -242,7 +242,7 @@ const Home = () => {
               Why Choose Us
             </motion.span>
             <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-serif font-bold mt-2">
-              The Brew & Bean Difference
+              The Sardar Cafe Difference
             </motion.h2>
           </motion.div>
 
@@ -373,8 +373,9 @@ const Home = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Location</h3>
                     <p className="text-muted-foreground">
-                      123 Coffee Street, Café District<br />
-                      New York, NY 10001
+                      Plot number 8-415/73, Miyapur,<br />
+                      Manjeera Pipeline Rd, Sapthagiri Colony,<br />
+                      Hafeezpet, Hyderabad, Telangana 500049
                     </p>
                   </div>
                 </div>
@@ -385,8 +386,8 @@ const Home = () => {
                   <div>
                     <h3 className="font-semibold mb-1">Opening Hours</h3>
                     <p className="text-muted-foreground">
-                      Monday - Friday: 7:00 AM - 9:00 PM<br />
-                      Saturday - Sunday: 8:00 AM - 10:00 PM
+                      Monday - Friday: 7:00 AM - 10:00 PM<br />
+                      Saturday - Sunday: 8:00 AM - 11:00 PM
                     </p>
                   </div>
                 </div>
@@ -404,7 +405,7 @@ const Home = () => {
             >
               <img
                 src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop"
-                alt="Brew & Bean Coffee House interior"
+                alt="Sardar Cafe interior"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -433,7 +434,7 @@ const Home = () => {
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent">
                 <a
-                  href="https://wa.me/1234567890?text=Hi! I'd like to place an order."
+                  href="https://wa.me/918333833659?text=Hi! I'd like to place an order."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

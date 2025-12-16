@@ -10,18 +10,18 @@ const blogPosts = [
     title: "How to Make the Perfect Espresso at Home",
     excerpt: "Master the art of home espresso with our comprehensive guide covering grind size, tamping pressure, and extraction timing.",
     image: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=800&h=500&fit=crop",
-    author: "Marcus Chen",
+    author: "Rajesh Kumar",
     date: "December 10, 2024",
     readTime: "5 min read",
     category: "Brewing Guide",
   },
   {
     id: 2,
-    slug: "coffee-origins-ethiopia",
-    title: "Exploring Coffee Origins: Ethiopia",
-    excerpt: "Journey to the birthplace of coffee and discover why Ethiopian beans are prized for their complex, fruity flavors.",
+    slug: "indian-coffee-origins",
+    title: "Exploring Indian Coffee: From Coorg to Your Cup",
+    excerpt: "Journey through India's coffee-growing regions and discover why Indian beans are gaining global recognition.",
     image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&h=500&fit=crop",
-    author: "James Williams",
+    author: "Arjun Reddy",
     date: "December 5, 2024",
     readTime: "7 min read",
     category: "Coffee Origins",
@@ -32,7 +32,7 @@ const blogPosts = [
     title: "Cold Brew vs. Iced Coffee: What's the Difference?",
     excerpt: "Understand the key differences between these popular cold coffee drinks and find out which one suits your taste.",
     image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&h=500&fit=crop",
-    author: "Sofia Rodriguez",
+    author: "Priya Menon",
     date: "November 28, 2024",
     readTime: "4 min read",
     category: "Coffee 101",
@@ -43,7 +43,7 @@ const blogPosts = [
     title: "Latte Art for Beginners: Your First Heart",
     excerpt: "Learn the fundamentals of milk steaming and pouring to create your first beautiful latte art design.",
     image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=500&fit=crop",
-    author: "Sofia Rodriguez",
+    author: "Priya Menon",
     date: "November 20, 2024",
     readTime: "6 min read",
     category: "Brewing Guide",
@@ -54,7 +54,7 @@ const blogPosts = [
     title: "Why Sustainable Coffee Matters",
     excerpt: "Explore the importance of ethical sourcing and how your coffee choices impact farmers and the environment.",
     image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&h=500&fit=crop",
-    author: "James Williams",
+    author: "Arjun Reddy",
     date: "November 15, 2024",
     readTime: "8 min read",
     category: "Sustainability",
@@ -65,7 +65,7 @@ const blogPosts = [
     title: "The Golden Ratio: Coffee to Water Perfection",
     excerpt: "Discover the science behind the perfect coffee-to-water ratio and how to adjust it for your preferred strength.",
     image: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&h=500&fit=crop",
-    author: "Marcus Chen",
+    author: "Rajesh Kumar",
     date: "November 8, 2024",
     readTime: "4 min read",
     category: "Brewing Guide",
@@ -293,7 +293,7 @@ const Blog = () => {
             </p>
             <Button asChild size="lg" variant="secondary">
               <a
-                href="https://wa.me/1234567890?text=Hi! I have a question about coffee."
+                href="https://wa.me/918333833659?text=Hi! I have a question about coffee."
                 target="_blank"
                 rel="noopener noreferrer"
               >

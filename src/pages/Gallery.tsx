@@ -119,7 +119,7 @@ const Gallery = () => {
               Our Gallery
             </h1>
             <p className="text-lg text-muted-foreground">
-              Take a peek inside Brew & Bean. From our cozy corners to the artistry in every cup, 
+              Take a peek inside Sardar Cafe. From our cozy corners to the artistry in every cup, 
               these moments capture the essence of who we are.
             </p>
           </motion.div>
@@ -233,12 +233,12 @@ const Gallery = () => {
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
               Photos only tell part of the story. Visit us to experience the warmth, 
-              aroma, and community that make Brew & Bean special.
+              aroma, and community that make Sardar Cafe special.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
                 <a
-                  href="https://wa.me/1234567890?text=Hi! I'd like to book a table at Brew & Bean."
+                  href="https://wa.me/918333833659?text=Hi! I'd like to book a table at Sardar Cafe."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

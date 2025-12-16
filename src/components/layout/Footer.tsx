@@ -23,10 +23,10 @@ export const Footer = () => {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
               <Coffee className="h-8 w-8" />
-              <span className="font-serif text-2xl font-semibold">Brew & Bean</span>
+              <span className="font-serif text-2xl font-semibold">Sardar Cafe</span>
             </Link>
             <p className="text-primary-foreground/80 leading-relaxed">
-              Crafting the perfect cup since 2015. Where every sip tells a story of quality, passion, and community.
+              Crafting the perfect cup with passion. Where every sip tells a story of quality, tradition, and community.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -68,19 +68,22 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 mt-0.5 flex-shrink-0" />
                 <span className="text-primary-foreground/80">
-                  123 Coffee Street, Café District<br />New York, NY 10001
+                  Plot number 8-415/73, Miyapur,<br />
+                  Manjeera Pipeline Rd, Sapthagiri Colony,<br />
+                  Alwin, Hafeezpet, Hyderabad,<br />
+                  Telangana 500049, India
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <a href="tel:+11234567890" className="text-primary-foreground/80 hover:text-primary-foreground">
-                  (123) 456-7890
+                <a href="tel:+918333833659" className="text-primary-foreground/80 hover:text-primary-foreground">
+                  +91 83338 33659
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <a href="mailto:hello@brewandbean.com" className="text-primary-foreground/80 hover:text-primary-foreground">
-                  hello@brewandbean.com
+                <a href="mailto:info@sardarcafe.com" className="text-primary-foreground/80 hover:text-primary-foreground">
+                  info@sardarcafe.com
                 </a>
               </li>
             </ul>
@@ -93,8 +96,8 @@ export const Footer = () => {
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 mt-0.5 flex-shrink-0" />
                 <div className="text-primary-foreground/80">
-                  <p>Mon - Fri: 7:00 AM - 9:00 PM</p>
-                  <p>Sat - Sun: 8:00 AM - 10:00 PM</p>
+                  <p>Mon - Fri: 7:00 AM - 10:00 PM</p>
+                  <p>Sat - Sun: 8:00 AM - 11:00 PM</p>
                 </div>
               </li>
             </ul>
@@ -104,7 +107,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} Brew & Bean Coffee House. All rights reserved.
+            © {new Date().getFullYear()} Sardar Cafe. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
             <Link to="/privacy" className="text-primary-foreground/60 hover:text-primary-foreground">
