@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Coffee } from "lucide-react";
+import { Menu, X, Coffee, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -71,8 +71,14 @@ export const Navbar = () => {
         </div>
 
         {/* Desktop Actions */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3">
           <ThemeToggle />
+          <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold animate-pulse">
+            <Link to="/franchise">
+              <Building2 className="mr-2 h-4 w-4" />
+              Franchise
+            </Link>
+          </Button>
           <Button asChild>
             <a
               href="https://wa.me/918333833659?text=Hi! I'd like to place an order."
@@ -127,10 +133,26 @@ export const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
+              
+              {/* Highlighted Franchise Button - Mobile */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navLinks.length * 0.05 }}
+                className="pt-2"
+              >
+                <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+                  <Link to="/franchise">
+                    <Building2 className="mr-2 h-4 w-4" />
+                    Franchise Opportunity
+                  </Link>
+                </Button>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: (navLinks.length + 1) * 0.05 }}
                 className="pt-2"
               >
                 <Button asChild className="w-full">

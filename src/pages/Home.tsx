@@ -1,7 +1,23 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Coffee, Leaf, Users, Star, MapPin, Clock, ArrowRight, ChevronLeft, ChevronRight, Phone, MessageCircle } from "lucide-react";
+import {
+  Coffee,
+  Leaf,
+  Users,
+  Star,
+  MapPin,
+  Clock,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Phone,
+  MessageCircle,
+  Building2,
+  Award,
+  Heart,
+  Sparkles,
+} from "lucide-react";
 import { useState } from "react";
 
 const featuredItems = [
@@ -34,18 +50,18 @@ const featuredItems = [
 const features = [
   {
     icon: Coffee,
-    title: "Fresh Beans",
-    description: "We source the finest beans from sustainable farms, roasted weekly for peak freshness.",
+    title: "Premium Ingredients",
+    description: "We source the finest tea leaves and spices from trusted suppliers for authentic taste.",
   },
   {
     icon: Users,
-    title: "Skilled Baristas",
-    description: "Our passionate team crafts each cup with precision, care, and a whole lot of love.",
+    title: "Expert Chai Makers",
+    description: "Our chai masters craft each cup with precision, care, and generations of knowledge.",
   },
   {
     icon: Leaf,
-    title: "Cozy Ambience",
-    description: "A warm, inviting space designed for relaxation, work, or catching up with friends.",
+    title: "Traditional Recipes",
+    description: "Authentic family recipes passed down through generations for the perfect brew.",
   },
 ];
 
@@ -53,21 +69,28 @@ const testimonials = [
   {
     name: "Priya Sharma",
     role: "Regular Customer",
-    content: "Sardar Cafe has become my daily ritual. The espresso is consistently perfect, and the atmosphere feels like a second home.",
+    content: "Sardar Cafe has become my daily ritual. The masala chai is consistently perfect, and the atmosphere feels like home.",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
   },
   {
     name: "Rahul Verma",
-    role: "Coffee Enthusiast",
-    content: "I've been to many cafes in Hyderabad, and Sardar Cafe stands out. Their cold brew is simply unmatched in quality.",
+    role: "Chai Enthusiast",
+    content: "I've been to many chai stalls in Hyderabad, and Sardar Cafe stands out. Their Irani chai is simply unmatched in quality.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
   },
   {
     name: "Ananya Reddy",
     role: "Remote Worker",
-    content: "The perfect spot for remote work. Great WiFi, amazing coffee, and the staff always remembers my order!",
+    content: "The perfect spot for chai breaks. Amazing chai, great snacks, and the staff always remembers my order!",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
   },
+];
+
+const stats = [
+  { value: "15+", label: "Outlets", icon: Building2 },
+  { value: "50K+", label: "Happy Customers", icon: Heart },
+  { value: "10+", label: "Years Experience", icon: Award },
+  { value: "20+", label: "Chai Varieties", icon: Sparkles },
 ];
 
 const containerVariants = {
@@ -118,13 +141,13 @@ const Home = () => {
               Welcome to Sardar Cafe
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-tight mb-6">
-              Crafted Coffee,
+              Authentic Chai,
               <br />
-              <span className="text-cream">Cozy Conversations</span>
+              <span className="text-cream">Timeless Tradition</span>
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
-              Experience the art of specialty coffee in a warm, inviting atmosphere. Every cup tells a story of quality, 
-              passion, and the perfect roast.
+              Experience the art of traditional Indian chai in a warm, inviting atmosphere. Every cup tells a story of quality, 
+              passion, and heritage.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="text-base">
@@ -170,6 +193,28 @@ const Home = () => {
         </motion.div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-12 bg-primary text-primary-foreground">
+        <div className="container-custom">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <stat.icon className="h-8 w-8 mx-auto mb-2 opacity-80" />
+                <div className="text-3xl md:text-4xl font-serif font-bold mb-1">{stat.value}</div>
+                <div className="text-primary-foreground/80 text-sm">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Featured Items */}
       <section className="section-padding bg-secondary/50">
         <div className="container-custom">
@@ -184,7 +229,7 @@ const Home = () => {
               Our Favorites
             </motion.span>
             <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-serif font-bold mt-2">
-              Featured Drinks
+              Featured Drinks & Snacks
             </motion.h2>
           </motion.div>
 
@@ -273,6 +318,73 @@ const Home = () => {
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Franchise CTA Section */}
+      <section className="section-padding bg-accent text-accent-foreground">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          >
+            <div>
+              <span className="inline-block px-4 py-2 rounded-full bg-accent-foreground/20 text-accent-foreground text-sm font-medium mb-4">
+                Business Opportunity
+              </span>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+                Own a Sardar Cafe Franchise
+              </h2>
+              <p className="text-accent-foreground/80 text-lg mb-6 leading-relaxed">
+                Join India's fastest-growing chai brand. Start your entrepreneurial journey with a proven 
+                business model, comprehensive training, and ongoing support. Low investment, high returns!
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "Investment starting from ₹15 Lakhs",
+                  "Complete training & setup support",
+                  "Proven business model with 18-24 months ROI",
+                  "Marketing & operational support",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-accent-foreground" />
+                    <span className="text-accent-foreground/90">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-4">
+                <Button asChild size="lg" className="bg-accent-foreground text-accent hover:bg-accent-foreground/90">
+                  <Link to="/franchise">
+                    <Building2 className="mr-2 h-5 w-5" />
+                    Learn More
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg" className="border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent">
+                  <a
+                    href="https://wa.me/918333833659?text=Hi! I'm interested in the Sardar Cafe franchise opportunity."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <MessageCircle className="mr-2 h-5 w-5" />
+                    Enquire Now
+                  </a>
+                </Button>
+              </div>
+            </div>
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=500&fit=crop"
+                alt="Franchise opportunity"
+                className="rounded-2xl shadow-xl"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-card text-foreground p-6 rounded-xl shadow-lg">
+                <div className="text-3xl font-serif font-bold text-primary">15+</div>
+                <div className="text-sm text-muted-foreground">Successful Outlets</div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
