@@ -13,6 +13,7 @@ import About from "@/pages/About";
 import OurCoffee from "@/pages/OurCoffee";
 import Gallery from "@/pages/Gallery";
 import Blog from "@/pages/Blog";
+import Franchise from "@/pages/Franchise";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
               <Route path="/our-coffee" element={<OurCoffee />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/blog" element={<Blog />} />
+              <Route path="/franchise" element={<Franchise />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Layout>
