@@ -73,7 +73,7 @@ export const Navbar = () => {
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-3">
           <ThemeToggle />
-          <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-semibold animate-pulse">
+          <Button asChild className="bg-red-600 hover:bg-red-700 text-white font-semibold animate-pulse border-0">
             <Link to="/franchise">
               <Building2 className="mr-2 h-4 w-4" />
               Franchise
@@ -92,7 +92,7 @@ export const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="flex lg:hidden items-center gap-2">
-          <Button asChild size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-xs px-3">
+          <Button asChild size="sm" className="bg-red-600 hover:bg-red-700 text-white font-semibold text-xs px-3">
             <Link to="/franchise">
               <Building2 className="mr-1 h-3 w-3" />
               Franchise
@@ -147,7 +147,7 @@ export const Navbar = () => {
                 transition={{ delay: navLinks.length * 0.05 }}
                 className="pt-2"
               >
-                <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold">
+                <Button asChild className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold">
                   <Link to="/franchise">
                     <Building2 className="mr-2 h-4 w-4" />
                     Franchise Opportunity
