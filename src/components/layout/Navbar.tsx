@@ -92,6 +92,12 @@ export const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="flex lg:hidden items-center gap-2">
+          <Button asChild size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold text-xs px-3">
+            <Link to="/franchise">
+              <Building2 className="mr-1 h-3 w-3" />
+              Franchise
+            </Link>
+          </Button>
           <ThemeToggle />
           <Button
             variant="ghost"
