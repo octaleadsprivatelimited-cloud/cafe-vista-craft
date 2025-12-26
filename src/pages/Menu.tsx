@@ -1,48 +1,76 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Coffee, IceCream, Leaf } from "lucide-react";
+import { Coffee, Milk, IceCream, GlassWater, Sparkles, CupSoda, Wine } from "lucide-react";
 
 const menuCategories = [
-  { id: "chai", name: "Chai", icon: Coffee },
-  { id: "special-chai", name: "Special Chai", icon: Leaf },
-  { id: "cold-drinks", name: "Cold Drinks", icon: Coffee },
-  { id: "snacks", name: "Snacks", icon: IceCream },
+  { id: "tea", name: "Tea", icon: Coffee },
+  { id: "coffee", name: "Coffee", icon: Coffee },
+  { id: "milk", name: "Milk", icon: Milk },
+  { id: "thick-shake", name: "Thick Shake", icon: IceCream },
+  { id: "mocktail", name: "Mocktail", icon: GlassWater },
+  { id: "special-drinks", name: "Sardar Cafe Special", icon: Sparkles },
+  { id: "milk-shake", name: "Milk Shake", icon: CupSoda },
+  { id: "lassi", name: "Lassi", icon: Wine },
 ];
 
 const menuItems = {
-  chai: [
-    { name: "Cutting Chai", description: "Classic half cup of strong, refreshing tea", price: "₹15" },
-    { name: "Regular Chai", description: "Full cup of perfectly brewed Indian tea", price: "₹20" },
-    { name: "Masala Chai", description: "Aromatic tea with traditional Indian spices", price: "₹30" },
-    { name: "Adrak Chai", description: "Ginger-infused tea for a warm, spicy kick", price: "₹25" },
-    { name: "Elaichi Chai", description: "Cardamom-flavored tea with rich aroma", price: "₹30" },
-    { name: "Tulsi Chai", description: "Holy basil tea with immunity-boosting benefits", price: "₹30" },
+  tea: [
+    { name: "Dum Tea", description: "Traditional slow-brewed aromatic tea", price: "₹15" },
+    { name: "Masala Tea", description: "Spiced tea with traditional Indian masala", price: "₹20" },
+    { name: "Black Tea", description: "Classic strong black tea", price: "₹15" },
+    { name: "Ginger Tea", description: "Refreshing tea with fresh ginger", price: "₹20" },
+    { name: "Lemon Tea", description: "Zesty tea with fresh lemon", price: "₹20" },
+    { name: "Elaichi Tea", description: "Cardamom flavored aromatic tea", price: "₹20" },
+    { name: "Belam Tea", description: "Sweet jaggery infused tea", price: "₹20" },
+    { name: "Pepper Tea", description: "Spicy tea with black pepper", price: "₹20" },
+    { name: "Green Tea", description: "Healthy antioxidant-rich green tea", price: "₹20" },
+    { name: "Sonti Tea", description: "Dry ginger infused traditional tea", price: "₹20" },
   ],
-  "special-chai": [
-    { name: "Kesar Chai", description: "Premium saffron-infused royal tea", price: "₹50" },
-    { name: "Kulhad Chai", description: "Earthy clay pot chai with authentic taste", price: "₹35" },
-    { name: "Irani Chai", description: "Hyderabadi style creamy layered tea", price: "₹40" },
-    { name: "Tandoori Chai", description: "Smoky flavored chai served in hot clay cup", price: "₹45" },
-    { name: "Rose Chai", description: "Fragrant rose petal infused tea", price: "₹40" },
-    { name: "Butter Chai", description: "Rich and creamy tea with butter", price: "₹45" },
+  coffee: [
+    { name: "Coffee", description: "Classic freshly brewed coffee", price: "₹20" },
+    { name: "Black Coffee", description: "Strong black coffee without milk", price: "₹20" },
+    { name: "Chocolate Coffee", description: "Rich coffee with chocolate flavor", price: "₹30" },
+    { name: "Gold Coffee", description: "Premium signature gold coffee", price: "₹90" },
   ],
-  "cold-drinks": [
-    { name: "Cold Coffee", description: "Chilled coffee with ice cream", price: "₹60" },
-    { name: "Lassi", description: "Traditional sweet yogurt drink", price: "₹40" },
-    { name: "Mango Lassi", description: "Creamy lassi with fresh mango pulp", price: "₹50" },
-    { name: "Badam Milk", description: "Almond flavored chilled milk", price: "₹50" },
-    { name: "Lemon Soda", description: "Refreshing lime soda with mint", price: "₹30" },
-    { name: "Jaljeera", description: "Cumin-flavored digestive drink", price: "₹30" },
+  milk: [
+    { name: "Milk", description: "Fresh warm milk", price: "₹15" },
+    { name: "Pepper Milk", description: "Warm milk with black pepper", price: "₹20" },
+    { name: "Boost", description: "Energizing Boost milk drink", price: "₹20" },
+    { name: "Horlicks", description: "Nutritious Horlicks milk", price: "₹20" },
+    { name: "Bournvita", description: "Chocolatey Bournvita milk", price: "₹20" },
   ],
-  snacks: [
-    { name: "Samosa", description: "Crispy pastry filled with spiced potatoes", price: "₹20" },
-    { name: "Kachori", description: "Flaky deep-fried snack with dal filling", price: "₹25" },
-    { name: "Bread Pakora", description: "Spiced bread fritters, crispy and golden", price: "₹30" },
-    { name: "Vada Pav", description: "Mumbai's favorite potato burger", price: "₹30" },
-    { name: "Bun Maska", description: "Soft bun with generous butter", price: "₹25" },
-    { name: "Osmania Biscuit", description: "Classic Hyderabadi tea-time biscuit", price: "₹15" },
-    { name: "Khari Biscuit", description: "Flaky, buttery puff pastry", price: "₹20" },
-    { name: "Maggi", description: "Hot and spicy instant noodles", price: "₹40" },
+  "thick-shake": [
+    { name: "Vanilla Shake", description: "Creamy vanilla thick shake", price: "₹99" },
+    { name: "Chocolate Shake", description: "Rich chocolate thick shake", price: "₹99" },
+    { name: "Butterscotch Shake", description: "Sweet butterscotch thick shake", price: "₹99" },
+    { name: "Banana Shake", description: "Fresh banana thick shake", price: "₹99" },
+    { name: "Mango Shake", description: "Tropical mango thick shake", price: "₹99" },
+  ],
+  mocktail: [
+    { name: "Blue Bleed", description: "Refreshing blue curacao mocktail", price: "₹49" },
+    { name: "Lime Mint", description: "Cool lime and mint refresher", price: "₹49" },
+    { name: "Rose Mint", description: "Fragrant rose with mint twist", price: "₹49" },
+    { name: "Orange Mint", description: "Citrus orange with fresh mint", price: "₹49" },
+  ],
+  "special-drinks": [
+    { name: "Vodka Coffee", description: "Non-alcoholic vodka flavored coffee", price: "₹30" },
+    { name: "Beer Coffee", description: "Non-alcoholic beer flavored coffee", price: "₹30" },
+    { name: "Scotch Coffee", description: "Non-alcoholic scotch flavored coffee", price: "₹30" },
+    { name: "Whisky Coffee", description: "Non-alcoholic whisky flavored coffee", price: "₹30" },
+    { name: "Rum Coffee", description: "Non-alcoholic rum flavored coffee", price: "₹30" },
+    { name: "Brandy Coffee", description: "Non-alcoholic brandy flavored coffee", price: "₹30" },
+  ],
+  "milk-shake": [
+    { name: "Vanilla", description: "Classic vanilla milk shake", price: "₹59" },
+    { name: "Butterscotch", description: "Sweet butterscotch milk shake", price: "₹59" },
+    { name: "Oreo", description: "Creamy Oreo milk shake", price: "₹59" },
+    { name: "Strawberry", description: "Fresh strawberry milk shake", price: "₹59" },
+  ],
+  lassi: [
+    { name: "Sweet Lassi", description: "Traditional sweet yogurt drink", price: "₹40" },
+    { name: "Mango Lassi", description: "Creamy mango flavored lassi", price: "₹40" },
+    { name: "Banana Lassi", description: "Fresh banana blended lassi", price: "₹40" },
+    { name: "Strawberry Lassi", description: "Fruity strawberry lassi", price: "₹40" },
   ],
 };
 
@@ -60,7 +88,7 @@ const itemVariants = {
 };
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState("chai");
+  const [activeCategory, setActiveCategory] = useState("tea");
 
   return (
     <>
