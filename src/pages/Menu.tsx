@@ -2,6 +2,27 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Coffee, Milk, IceCream, GlassWater, Sparkles, CupSoda, Wine } from "lucide-react";
 
+// Import category images
+import teaImage from "@/assets/menu-tea.jpg";
+import coffeeImage from "@/assets/menu-coffee.jpg";
+import milkImage from "@/assets/menu-milk.jpg";
+import thickShakeImage from "@/assets/menu-thick-shake.jpg";
+import mocktailImage from "@/assets/menu-mocktail.jpg";
+import specialImage from "@/assets/menu-special.jpg";
+import milkShakeImage from "@/assets/menu-milkshake.jpg";
+import lassiImage from "@/assets/menu-lassi.jpg";
+
+const categoryImages: Record<string, string> = {
+  tea: teaImage,
+  coffee: coffeeImage,
+  milk: milkImage,
+  "thick-shake": thickShakeImage,
+  mocktail: mocktailImage,
+  "special-drinks": specialImage,
+  "milk-shake": milkShakeImage,
+  lassi: lassiImage,
+};
+
 const menuCategories = [
   { id: "tea", name: "Tea", icon: Coffee },
   { id: "coffee", name: "Coffee", icon: Coffee },
@@ -145,6 +166,29 @@ const Menu = () => {
                 {category.name}
               </button>
             ))}
+          </motion.div>
+
+          {/* Category Image */}
+          <motion.div
+            key={`image-${activeCategory}`}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4 }}
+            className="mb-10 flex justify-center"
+          >
+            <div className="relative w-full max-w-md overflow-hidden rounded-2xl shadow-xl">
+              <img
+                src={categoryImages[activeCategory]}
+                alt={menuCategories.find(c => c.id === activeCategory)?.name}
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <h2 className="text-2xl font-serif font-bold text-white">
+                  {menuCategories.find(c => c.id === activeCategory)?.name}
+                </h2>
+              </div>
+            </div>
           </motion.div>
 
           {/* Menu Items Grid */}
