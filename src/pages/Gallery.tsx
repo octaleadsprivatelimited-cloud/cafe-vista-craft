@@ -3,75 +3,71 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Import chai images
+import chaiImage1 from "@/assets/gallery-chai-1.jpg";
+import chaiImage2 from "@/assets/gallery-chai-2.jpg";
+import chaiImage3 from "@/assets/gallery-chai-3.jpg";
+import chaiImage4 from "@/assets/gallery-chai-4.jpg";
+import chaiImage5 from "@/assets/gallery-chai-5.jpg";
+import interiorImage1 from "@/assets/gallery-interior-1.jpg";
+
 const galleryImages = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&h=600&fit=crop",
+    src: chaiImage1,
+    alt: "Traditional Indian masala chai in clay kulhad",
+    category: "chai",
+  },
+  {
+    id: 2,
+    src: chaiImage2,
+    alt: "Chai being poured in traditional style",
+    category: "chai",
+  },
+  {
+    id: 3,
+    src: chaiImage3,
+    alt: "Cutting chai served on tray",
+    category: "chai",
+  },
+  {
+    id: 4,
+    src: chaiImage4,
+    alt: "Traditional chai preparation with spices",
+    category: "chai",
+  },
+  {
+    id: 5,
+    src: chaiImage5,
+    alt: "Customers enjoying chai together",
+    category: "community",
+  },
+  {
+    id: 6,
+    src: interiorImage1,
     alt: "Cozy café interior with warm lighting",
     category: "interior",
   },
   {
-    id: 2,
-    src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=600&fit=crop",
-    alt: "Barista crafting latte art",
-    category: "barista",
-  },
-  {
-    id: 3,
-    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
-    alt: "Beautifully presented cappuccino",
-    category: "drinks",
-  },
-  {
-    id: 4,
-    src: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&h=600&fit=crop",
-    alt: "Coffee shop counter display",
-    category: "interior",
-  },
-  {
-    id: 5,
-    src: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&h=600&fit=crop",
-    alt: "Fresh coffee beans in hands",
-    category: "beans",
-  },
-  {
-    id: 6,
-    src: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&h=600&fit=crop",
-    alt: "Espresso machine in action",
-    category: "barista",
-  },
-  {
     id: 7,
-    src: "https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800&h=600&fit=crop",
-    alt: "Coffee and pastry on table",
-    category: "drinks",
+    src: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=600&fit=crop",
+    alt: "Barista crafting beverages",
+    category: "barista",
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=800&h=600&fit=crop",
-    alt: "Café seating area with plants",
-    category: "interior",
+    src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop",
+    alt: "Beautifully presented coffee",
+    category: "drinks",
   },
   {
     id: 9,
     src: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&h=600&fit=crop",
-    alt: "Iced coffee drinks",
+    alt: "Iced beverages",
     category: "drinks",
   },
   {
     id: 10,
-    src: "https://images.unsplash.com/photo-1442550528053-c431ecb55509?w=800&h=600&fit=crop",
-    alt: "Coffee roasting process",
-    category: "beans",
-  },
-  {
-    id: 11,
-    src: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&h=600&fit=crop",
-    alt: "Coffee farm landscape",
-    category: "beans",
-  },
-  {
-    id: 12,
     src: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&h=600&fit=crop",
     alt: "Group of friends at café",
     category: "community",
@@ -80,10 +76,10 @@ const galleryImages = [
 
 const categories = [
   { id: "all", name: "All" },
+  { id: "chai", name: "Chai" },
   { id: "interior", name: "Our Space" },
   { id: "drinks", name: "Drinks" },
   { id: "barista", name: "Baristas" },
-  { id: "beans", name: "Coffee Beans" },
   { id: "community", name: "Community" },
 ];
 

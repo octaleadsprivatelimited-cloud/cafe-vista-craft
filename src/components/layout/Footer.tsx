@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Coffee, MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const quickLinks = [
   { name: "Home", path: "/" },
@@ -31,9 +32,8 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2">
-              <Coffee className="h-8 w-8" />
-              <span className="font-serif text-2xl font-semibold">Sardar Cafe</span>
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="Sardar Cafe" className="h-16 w-auto" />
             </Link>
             <p className="text-primary-foreground/80 leading-relaxed">
               Crafting the perfect cup with passion. Where every sip tells a story of quality, tradition, and community.
