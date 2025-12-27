@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Coffee, Building2 } from "lucide-react";
+import { Menu, X, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
-
+import logo from "@/assets/logo.png";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Menu", path: "/menu" },
@@ -40,11 +40,12 @@ export const Navbar = () => {
     >
       <nav className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <Coffee className="h-8 w-8 text-primary transition-transform group-hover:rotate-12" />
-          <span className="font-serif text-xl md:text-2xl font-semibold text-foreground">
-            Sardar Cafe
-          </span>
+        <Link to="/" className="flex items-center group">
+          <img 
+            src={logo} 
+            alt="Sardar Cafe" 
+            className="h-12 md:h-14 w-auto transition-transform group-hover:scale-105"
+          />
         </Link>
 
         {/* Desktop Navigation */}
