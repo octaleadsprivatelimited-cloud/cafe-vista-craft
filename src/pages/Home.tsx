@@ -19,6 +19,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useState } from "react";
+import franchiseImage from "@/assets/jpeg-optimizer_IMG_20250710_151954308_HDR.jpg";
 
 const featuredItems = [
   {
@@ -376,9 +377,9 @@ const Home = () => {
             </div>
             <div className="relative">
               <img
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=500&fit=crop"
-                alt="Franchise opportunity"
-                className="rounded-2xl shadow-xl"
+                src={franchiseImage}
+                alt="Sardar Cafe franchise opportunity - real cafe interior"
+                className="rounded-2xl shadow-xl w-full h-auto"
               />
               <div className="absolute -bottom-6 -right-6 bg-card text-foreground p-6 rounded-xl shadow-lg">
                 <div className="text-3xl font-serif font-bold text-primary">15+</div>

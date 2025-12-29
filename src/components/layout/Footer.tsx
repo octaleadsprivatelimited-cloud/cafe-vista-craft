@@ -28,10 +28,10 @@ export const Footer = () => {
         <div className="absolute inset-0 bg-primary/95" />
       </div>
 
-      <div className="container-custom section-padding relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container-custom py-8 md:py-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <Link to="/" className="flex items-center">
               <img src={logo} alt="Sardar Cafe" className="h-16 w-auto" />
             </Link>
@@ -55,7 +55,7 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <h3 className="font-serif text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -72,7 +72,7 @@ export const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <h3 className="font-serif text-lg font-semibold">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -100,7 +100,7 @@ export const Footer = () => {
           </div>
 
           {/* Opening Hours */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <h3 className="font-serif text-lg font-semibold">Opening Hours</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
@@ -115,9 +115,20 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} Sardar Cafe. All rights reserved.
+        <div className="mt-8 pt-6 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-primary-foreground/60 text-sm text-center md:text-left">
+            © {new Date().getFullYear()} Sardar Cafe. All rights reserved.{" "}
+            <span className="text-primary-foreground/60">
+              Developed by{" "}
+              <a
+                href="https://octaleads.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground/80 hover:text-primary-foreground underline transition-colors"
+              >
+                Octaleads Private Limited
+              </a>
+            </span>
           </p>
           <div className="flex gap-6 text-sm">
             <Link to="/privacy" className="text-primary-foreground/60 hover:text-primary-foreground">

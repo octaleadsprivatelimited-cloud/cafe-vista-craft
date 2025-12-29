@@ -26,27 +26,6 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    name: "Rajesh Kumar",
-    role: "Founder & Head Roaster",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-    bio: "With 12 years in specialty coffee, Rajesh turned his obsession into Sardar Cafe.",
-  },
-  {
-    name: "Priya Menon",
-    role: "Head Barista",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-    bio: "Award-winning barista who believes every cup tells a unique story.",
-  },
-  {
-    name: "Arjun Reddy",
-    role: "Coffee Sourcer",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-    bio: "Travels across India and beyond to find the most exceptional beans.",
-  },
-];
-
 const milestones = [
   { year: "2018", event: "Sardar Cafe opens its doors in Hyderabad" },
   { year: "2019", event: "Launched our signature house blend" },
@@ -72,7 +51,7 @@ const About = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-12 md:py-16 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -240,48 +219,6 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="section-padding bg-primary text-primary-foreground">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <span className="text-primary-foreground/80 font-medium">Meet the Team</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold mt-2">
-              The Faces Behind Your Coffee
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          >
-            {team.map((member) => (
-              <motion.div
-                key={member.name}
-                variants={itemVariants}
-                className="text-center"
-              >
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-primary-foreground/20"
-                />
-                <h3 className="font-serif font-semibold text-xl">{member.name}</h3>
-                <p className="text-primary-foreground/70 text-sm mb-2">{member.role}</p>
-                <p className="text-primary-foreground/80 text-sm">{member.bio}</p>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 

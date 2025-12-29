@@ -3,13 +3,33 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Import chai images
+// Import all gallery images
 import chaiImage1 from "@/assets/gallery-chai-1.jpg";
 import chaiImage2 from "@/assets/gallery-chai-2.jpg";
 import chaiImage3 from "@/assets/gallery-chai-3.jpg";
 import chaiImage4 from "@/assets/gallery-chai-4.jpg";
 import chaiImage5 from "@/assets/gallery-chai-5.jpg";
 import interiorImage1 from "@/assets/gallery-interior-1.jpg";
+import img1 from "@/assets/jpeg-optimizer_IMG_20250710_125047340_HDR.jpg";
+import img2 from "@/assets/jpeg-optimizer_IMG_20250710_150613237_HDR.jpg";
+import img3 from "@/assets/jpeg-optimizer_IMG_20250710_150722130_HDR.jpg";
+import img4 from "@/assets/jpeg-optimizer_IMG_20250710_150727278_HDR.jpg";
+import img5 from "@/assets/jpeg-optimizer_IMG_20250710_151137892.jpg";
+import img6 from "@/assets/jpeg-optimizer_IMG_20250710_151139462.jpg";
+import img7 from "@/assets/jpeg-optimizer_IMG_20250710_151144426.jpg";
+import img8 from "@/assets/jpeg-optimizer_IMG_20250710_151654878.jpg";
+import img9 from "@/assets/jpeg-optimizer_IMG_20250710_151954308_HDR.jpg";
+import img10 from "@/assets/jpeg-optimizer_IMG_20250710_152044799_HDR.jpg";
+import img11 from "@/assets/jpeg-optimizer_IMG_20250710_152046056_HDR.jpg";
+import img12 from "@/assets/jpeg-optimizer_IMG_20250710_152052251_HDR.jpg";
+import img13 from "@/assets/jpeg-optimizer_IMG_20250710_152057372_HDR.jpg";
+import img14 from "@/assets/jpeg-optimizer_IMG_20250710_173734019_HDR.jpg";
+import img15 from "@/assets/jpeg-optimizer_IMG_20250710_173752589_HDR.jpg";
+import img16 from "@/assets/jpeg-optimizer_IMG_20250710_223022437_HDR.jpg";
+import img17 from "@/assets/jpeg-optimizer_IMG_20250710_223230522_HDR.jpg";
+import img18 from "@/assets/jpeg-optimizer_IMG_20250710_223231966_HDR.jpg";
+import img19 from "@/assets/jpeg-optimizer_IMG_20250710_223245020_HDR.jpg";
+import img20 from "@/assets/jpeg-optimizer_IMG_20250710_223347878_HDR.jpg";
 
 const galleryImages = [
   {
@@ -72,6 +92,126 @@ const galleryImages = [
     alt: "Group of friends at café",
     category: "community",
   },
+  {
+    id: 11,
+    src: img1,
+    alt: "Sardar Cafe interior and ambiance",
+    category: "interior",
+  },
+  {
+    id: 12,
+    src: img2,
+    alt: "Cafe space and atmosphere",
+    category: "interior",
+  },
+  {
+    id: 13,
+    src: img3,
+    alt: "Cafe environment and setting",
+    category: "interior",
+  },
+  {
+    id: 14,
+    src: img4,
+    alt: "Cafe interior design",
+    category: "interior",
+  },
+  {
+    id: 15,
+    src: img5,
+    alt: "Beverages and drinks at Sardar Cafe",
+    category: "drinks",
+  },
+  {
+    id: 16,
+    src: img6,
+    alt: "Fresh beverages being prepared",
+    category: "drinks",
+  },
+  {
+    id: 17,
+    src: img7,
+    alt: "Delicious drinks and refreshments",
+    category: "drinks",
+  },
+  {
+    id: 18,
+    src: img8,
+    alt: "Cafe menu items and beverages",
+    category: "drinks",
+  },
+  {
+    id: 19,
+    src: img9,
+    alt: "Cafe atmosphere and space",
+    category: "interior",
+  },
+  {
+    id: 20,
+    src: img10,
+    alt: "Sardar Cafe interior view",
+    category: "interior",
+  },
+  {
+    id: 21,
+    src: img11,
+    alt: "Cafe environment and ambiance",
+    category: "interior",
+  },
+  {
+    id: 22,
+    src: img12,
+    alt: "Cafe space and design",
+    category: "interior",
+  },
+  {
+    id: 23,
+    src: img13,
+    alt: "Cafe interior and setting",
+    category: "interior",
+  },
+  {
+    id: 24,
+    src: img14,
+    alt: "Evening ambiance at Sardar Cafe",
+    category: "interior",
+  },
+  {
+    id: 25,
+    src: img15,
+    alt: "Cafe space and atmosphere",
+    category: "interior",
+  },
+  {
+    id: 26,
+    src: img16,
+    alt: "Night view of Sardar Cafe",
+    category: "interior",
+  },
+  {
+    id: 27,
+    src: img17,
+    alt: "Cafe interior and environment",
+    category: "interior",
+  },
+  {
+    id: 28,
+    src: img18,
+    alt: "Cafe space and design",
+    category: "interior",
+  },
+  {
+    id: 29,
+    src: img19,
+    alt: "Cafe atmosphere and setting",
+    category: "interior",
+  },
+  {
+    id: 30,
+    src: img20,
+    alt: "Sardar Cafe interior view",
+    category: "interior",
+  },
 ];
 
 const categories = [
@@ -94,7 +234,7 @@ const Gallery = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-12 md:py-16 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{

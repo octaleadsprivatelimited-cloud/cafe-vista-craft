@@ -10,7 +10,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    content: "Plot number 8-415/73, Miyapur,\nManjeera Pipeline Rd, Sapthagiri Colony,\nHafeezpet, Hyderabad 500049",
+    content: "Plot number 8-415/73, Miyapur,\nManjeera Pipeline Rd, Sapthagiri Colony,\nAlwin, Hafeezpet, Hyderabad,\nTelangana 500049, India",
   },
   {
     icon: Phone,
@@ -73,7 +73,7 @@ const Contact = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-12 md:py-16 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -225,7 +225,7 @@ const Contact = () => {
               {/* Map */}
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.2247646097!2d78.3691!3d17.4969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91ff82c39f3b%3A0x123456789!2sMiyapur%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1702000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.1!2d78.3363!3d17.4909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI5JzI3LjIiTiA3OMKwMjAnMTAuNyJF!5e0!3m2!1sen!2sin!4v1702000000000!5m2!1sen!2sin&q=Plot+number+8-415%2F73%2C+Miyapur%2C+Manjeera+Pipeline+Rd%2C+Sapthagiri+Colony%2C+Alwin%2C+Hafeezpet%2C+Hyderabad%2C+Telangana+500049"
                   width="100%"
                   height="350"
                   style={{ border: 0 }}

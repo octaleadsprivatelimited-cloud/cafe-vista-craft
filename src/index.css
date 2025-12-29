@@ -121,6 +121,40 @@
   .glass-effect {
     @apply bg-background/80 backdrop-blur-md;
   }
+
+  /* Prose styles for blog content */
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose h2 {
+    @apply text-3xl font-serif font-bold mt-8 mb-4 text-foreground;
+  }
+
+  .prose h3 {
+    @apply text-2xl font-serif font-semibold mt-6 mb-3 text-foreground;
+  }
+
+  .prose p {
+    @apply mb-4 leading-7 text-foreground/90;
+  }
+
+  .prose ul,
+  .prose ol {
+    @apply mb-4 ml-6;
+  }
+
+  .prose li {
+    @apply mb-2 leading-7;
+  }
+
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose a {
+    @apply text-primary hover:text-primary/80 underline;
+  }
 }
 
 @layer utilities {

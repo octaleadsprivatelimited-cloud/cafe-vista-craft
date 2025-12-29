@@ -1,76 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
-const blogPosts = [
-  {
-    id: 1,
-    slug: "perfect-home-espresso",
-    title: "How to Make the Perfect Espresso at Home",
-    excerpt: "Master the art of home espresso with our comprehensive guide covering grind size, tamping pressure, and extraction timing.",
-    image: "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=800&h=500&fit=crop",
-    author: "Rajesh Kumar",
-    date: "December 10, 2024",
-    readTime: "5 min read",
-    category: "Brewing Guide",
-  },
-  {
-    id: 2,
-    slug: "indian-coffee-origins",
-    title: "Exploring Indian Coffee: From Coorg to Your Cup",
-    excerpt: "Journey through India's coffee-growing regions and discover why Indian beans are gaining global recognition.",
-    image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&h=500&fit=crop",
-    author: "Arjun Reddy",
-    date: "December 5, 2024",
-    readTime: "7 min read",
-    category: "Coffee Origins",
-  },
-  {
-    id: 3,
-    slug: "cold-brew-vs-iced-coffee",
-    title: "Cold Brew vs. Iced Coffee: What's the Difference?",
-    excerpt: "Understand the key differences between these popular cold coffee drinks and find out which one suits your taste.",
-    image: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&h=500&fit=crop",
-    author: "Priya Menon",
-    date: "November 28, 2024",
-    readTime: "4 min read",
-    category: "Coffee 101",
-  },
-  {
-    id: 4,
-    slug: "latte-art-basics",
-    title: "Latte Art for Beginners: Your First Heart",
-    excerpt: "Learn the fundamentals of milk steaming and pouring to create your first beautiful latte art design.",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=500&fit=crop",
-    author: "Priya Menon",
-    date: "November 20, 2024",
-    readTime: "6 min read",
-    category: "Brewing Guide",
-  },
-  {
-    id: 5,
-    slug: "sustainable-coffee",
-    title: "Why Sustainable Coffee Matters",
-    excerpt: "Explore the importance of ethical sourcing and how your coffee choices impact farmers and the environment.",
-    image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&h=500&fit=crop",
-    author: "Arjun Reddy",
-    date: "November 15, 2024",
-    readTime: "8 min read",
-    category: "Sustainability",
-  },
-  {
-    id: 6,
-    slug: "perfect-coffee-water-ratio",
-    title: "The Golden Ratio: Coffee to Water Perfection",
-    excerpt: "Discover the science behind the perfect coffee-to-water ratio and how to adjust it for your preferred strength.",
-    image: "https://images.unsplash.com/photo-1498804103079-a6351b050096?w=800&h=500&fit=crop",
-    author: "Rajesh Kumar",
-    date: "November 8, 2024",
-    readTime: "4 min read",
-    category: "Brewing Guide",
-  },
-];
+import { blogPosts } from "@/data/blogPosts";
 
 const categories = ["All", "Brewing Guide", "Coffee Origins", "Coffee 101", "Sustainability"];
 
@@ -88,10 +21,38 @@ const itemVariants = {
 };
 
 const Blog = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [postsToShow, setPostsToShow] = useState<number>(3); // Initial number of posts to display
+  const POSTS_PER_PAGE = 3; // Number of posts to load each time
+
+  // Filter posts based on selected category
+  const filteredPosts = selectedCategory === "All" 
+    ? blogPosts.slice(1) 
+    : blogPosts.slice(1).filter((post) => post.category === selectedCategory);
+
+  // Get featured post (always show the first post, or filter if category is selected)
+  const featuredPost = selectedCategory === "All" || blogPosts[0].category === selectedCategory
+    ? blogPosts[0]
+    : null;
+
+  // Get posts to display (limited by postsToShow)
+  const displayedPosts = filteredPosts.slice(0, postsToShow);
+  const hasMorePosts = filteredPosts.length > postsToShow;
+
+  // Reset posts to show when category changes
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setPostsToShow(POSTS_PER_PAGE); // Reset to initial count
+  };
+
+  // Load more posts
+  const handleLoadMore = () => {
+    setPostsToShow((prev) => prev + POSTS_PER_PAGE);
+  };
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-12 md:py-16 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -120,51 +81,55 @@ const Blog = () => {
       </section>
 
       {/* Featured Post */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-card rounded-2xl overflow-hidden shadow-lg"
-          >
-            <div className="aspect-video lg:aspect-auto lg:h-full">
-              <img
-                src={blogPosts[0].image}
-                alt={blogPosts[0].title}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-8">
-              <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
-                Featured
-              </span>
-              <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-                {blogPosts[0].title}
-              </h2>
-              <p className="text-muted-foreground mb-6">{blogPosts[0].excerpt}</p>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
-                <div className="flex items-center gap-1">
-                  <User className="h-4 w-4" />
-                  {blogPosts[0].author}
-                </div>
-                <div className="flex items-center gap-1">
-                  <Calendar className="h-4 w-4" />
-                  {blogPosts[0].date}
-                </div>
-                <div className="flex items-center gap-1">
-                  <Clock className="h-4 w-4" />
-                  {blogPosts[0].readTime}
-                </div>
+      {featuredPost && (
+        <section className="section-padding">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-card rounded-2xl overflow-hidden shadow-lg"
+            >
+              <div className="aspect-video lg:aspect-auto lg:h-full">
+                <img
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <Button>
-                Read Article
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+              <div className="p-8">
+                <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                  Featured
+                </span>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold mb-4">
+                  {featuredPost.title}
+                </h2>
+                <p className="text-muted-foreground mb-6">{featuredPost.excerpt}</p>
+                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-6">
+                  <div className="flex items-center gap-1">
+                    <User className="h-4 w-4" />
+                    {featuredPost.author}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    {featuredPost.date}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    {featuredPost.readTime}
+                  </div>
+                </div>
+                <Button asChild>
+                  <Link to={`/blog/${featuredPost.slug}`}>
+                    Read Article
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Blog Grid */}
       <section className="section-padding bg-secondary/50">
@@ -188,7 +153,12 @@ const Blog = () => {
             {categories.map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 rounded-full text-sm font-medium bg-card hover:bg-primary hover:text-primary-foreground transition-colors border border-border"
+                onClick={() => handleCategoryChange(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors border ${
+                  selectedCategory === category
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-card hover:bg-primary/10 hover:text-primary border-border"
+                }`}
               >
                 {category}
               </button>
@@ -196,55 +166,67 @@ const Blog = () => {
           </motion.div>
 
           {/* Posts Grid */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {blogPosts.slice(1).map((post) => (
+          {filteredPosts.length > 0 ? (
+            <motion.div
+              key={`${selectedCategory}-${postsToShow}`}
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {displayedPosts.map((post) => (
               <motion.article
                 key={post.id}
                 variants={itemVariants}
                 className="bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow group"
               >
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-6">
-                  <span className="text-xs font-medium text-primary">{post.category}</span>
-                  <h3 className="font-serif font-semibold text-lg mt-2 mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{post.excerpt}</p>
-                  <div className="flex items-center justify-between text-xs text-muted-foreground">
-                    <span>{post.author}</span>
-                    <div className="flex items-center gap-3">
-                      <span>{post.date}</span>
-                      <span>{post.readTime}</span>
+                <Link to={`/blog/${post.slug}`}>
+                  <div className="aspect-video overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <span className="text-xs font-medium text-primary">{post.category}</span>
+                    <h3 className="font-serif font-semibold text-lg mt-2 mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{post.excerpt}</p>
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                      <span>{post.author}</span>
+                      <div className="flex items-center gap-3">
+                        <span>{post.date}</span>
+                        <span>{post.readTime}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </motion.article>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          ) : (
+            <div className="text-center py-12">
+              <p className="text-muted-foreground text-lg">
+                No articles found in this category.
+              </p>
+            </div>
+          )}
 
           {/* Load More */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Button variant="outline" size="lg">
-              Load More Articles
-            </Button>
-          </motion.div>
+          {hasMorePosts && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <Button variant="outline" size="lg" onClick={handleLoadMore}>
+                Load More Articles
+              </Button>
+            </motion.div>
+          )}
         </div>
       </section>
 
