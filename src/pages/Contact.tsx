@@ -58,16 +58,38 @@ const Contact = () => {
 
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. We'll get back to you soon.",
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
+    try {
+      const response = await fetch("https://formspree.io/f/xqekgjqn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: "New Contact Form Submission from Sardar Cafe Website",
+        }),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. We'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact us via WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -114,7 +136,7 @@ const Contact = () => {
               <h2 className="text-2xl md:text-3xl font-serif font-bold mb-6">
                 Send Us a Message
               </h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} action="https://formspree.io/f/xqekgjqn" method="POST" className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Your Name
@@ -128,6 +150,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     className="bg-card"
                     maxLength={100}
+                    required
                   />
                 </div>
                 <div>
@@ -143,6 +166,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     className="bg-card"
                     maxLength={255}
+                    required
                   />
                 </div>
                 <div>
@@ -158,8 +182,10 @@ const Contact = () => {
                     onChange={handleInputChange}
                     className="bg-card resize-none"
                     maxLength={1000}
+                    required
                   />
                 </div>
+                <input type="hidden" name="_subject" value="New Contact Form Submission from Sardar Cafe Website" />
                 <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto">
                   {isSubmitting ? (
                     "Sending..."

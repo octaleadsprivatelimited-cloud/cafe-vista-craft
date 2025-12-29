@@ -246,12 +246,41 @@ const Blog = () => {
               Subscribe to our newsletter for brewing guides, coffee news, and exclusive offers. 
               No spam, just great coffee content.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form 
+              action="https://formspree.io/f/xqekgjqn" 
+              method="POST"
+              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                formData.append("_subject", "Newsletter Subscription from Sardar Cafe Website");
+                
+                fetch("https://formspree.io/f/xqekgjqn", {
+                  method: "POST",
+                  body: formData,
+                })
+                  .then((response) => {
+                    if (response.ok) {
+                      alert("Thank you for subscribing! We'll keep you updated with our latest news.");
+                      form.reset();
+                    } else {
+                      alert("Subscription failed. Please try again.");
+                    }
+                  })
+                  .catch(() => {
+                    alert("Subscription failed. Please try again.");
+                  });
+              }}
+            >
               <input
                 type="email"
+                name="email"
                 placeholder="Enter your email"
+                required
                 className="flex-1 px-4 py-3 rounded-lg border border-border bg-card focus:outline-none focus:ring-2 focus:ring-primary"
               />
+              <input type="hidden" name="_subject" value="Newsletter Subscription from Sardar Cafe Website" />
               <Button type="submit">Subscribe</Button>
             </form>
           </motion.div>
