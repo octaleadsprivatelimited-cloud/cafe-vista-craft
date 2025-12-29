@@ -249,13 +249,13 @@ const About = () => {
               <Button asChild size="lg">
                 <Link to="/contact">Visit Us</Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="text-sm sm:text-base w-full sm:w-auto px-4 sm:px-8">
                 <a
                   href="https://wa.me/918333833659?text=Hi! I'd like to learn more about Sardar Cafe."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Chat on WhatsApp
+                  <span className="whitespace-normal sm:whitespace-nowrap">Chat on WhatsApp</span>
                 </a>
               </Button>
             </div>

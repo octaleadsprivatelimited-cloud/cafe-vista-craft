@@ -15,4 +15,9 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // Preview server configuration for SPA routing
+  preview: {
+    port: 4173,
+    strictPort: true,
+  },
 }));

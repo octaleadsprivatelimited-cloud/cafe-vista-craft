@@ -215,10 +215,10 @@ const Contact = () => {
                   href="https://wa.me/918333833659?text=Hi! I have a question about Sardar Cafe."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-accent font-medium hover:underline"
+                  className="inline-flex items-center gap-2 text-accent font-medium hover:underline text-sm sm:text-base"
                 >
-                  <MessageCircle className="h-5 w-5" />
-                  Chat on WhatsApp
+                  <MessageCircle className="h-5 w-5 flex-shrink-0" />
+                  <span className="whitespace-normal sm:whitespace-nowrap">Chat on WhatsApp</span>
                 </a>
               </div>
             </motion.div>

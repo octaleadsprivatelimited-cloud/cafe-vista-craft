@@ -158,26 +158,26 @@ const Home = () => {
               passion, and heritage.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="text-base">
+              <Button asChild size="lg" className="text-sm sm:text-base w-full sm:w-auto px-4 sm:px-8">
                 <Link to="/menu">
-                  View Menu
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <span className="whitespace-normal sm:whitespace-nowrap">View Menu</span>
+                  <ArrowRight className="ml-2 h-5 w-5 flex-shrink-0" />
                 </Link>
               </Button>
-              <Button asChild size="lg" className="text-base">
+              <Button asChild size="lg" className="text-sm sm:text-base w-full sm:w-auto px-4 sm:px-8">
                 <Link to="/contact">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Contact Us
+                  <Phone className="mr-2 h-5 w-5 flex-shrink-0" />
+                  <span className="whitespace-normal sm:whitespace-nowrap">Contact Us</span>
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-base border-green-500 text-green-500 hover:bg-green-500 hover:text-white">
+              <Button asChild variant="outline" size="lg" className="text-sm sm:text-base border-green-500 text-green-500 hover:bg-green-500 hover:text-white w-full sm:w-auto px-4 sm:px-8">
                 <a
                   href="https://wa.me/918333833659?text=Hi! I'd like to place an order."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  WhatsApp
+                  <MessageCircle className="mr-2 h-5 w-5 flex-shrink-0" />
+                  <span className="whitespace-normal sm:whitespace-nowrap">WhatsApp</span>
                 </a>
               </Button>
             </div>

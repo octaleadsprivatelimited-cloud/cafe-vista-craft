@@ -362,13 +362,13 @@ const OurCoffee = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="text-sm sm:text-base w-full sm:w-auto px-4 sm:px-8">
                 <a
                   href="https://wa.me/918333833659?text=Hi! I'd like to order some coffee beans."
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Order Beans via WhatsApp
+                  <span className="whitespace-normal sm:whitespace-nowrap">Order Beans via WhatsApp</span>
                 </a>
               </Button>
             </div>

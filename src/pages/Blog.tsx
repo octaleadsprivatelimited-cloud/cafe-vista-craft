@@ -309,13 +309,13 @@ const Blog = () => {
               Our team loves talking coffee! Reach out via WhatsApp and we'll be happy to 
               help with recommendations, brewing tips, or anything coffee-related.
             </p>
-            <Button asChild size="lg" variant="secondary">
+            <Button asChild size="lg" variant="secondary" className="text-sm sm:text-base w-full sm:w-auto px-4 sm:px-8">
               <a
                 href="https://wa.me/918333833659?text=Hi! I have a question about coffee."
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Ask Us on WhatsApp
+                <span className="whitespace-normal sm:whitespace-nowrap">Ask Us on WhatsApp</span>
               </a>
             </Button>
           </motion.div>

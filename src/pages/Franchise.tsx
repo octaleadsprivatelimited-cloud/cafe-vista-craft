@@ -107,26 +107,22 @@ const Franchise = () => {
               business model and comprehensive support system.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                className="text-base bg-accent hover:bg-accent/90 text-accent-foreground"
+              <a
+                href="https://wa.me/918333833659?text=Hi! I'm interested in the Sardar Cafe franchise opportunity."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-4 sm:px-8 py-3 text-sm sm:text-base font-semibold text-accent-foreground transition-colors hover:bg-accent/90 w-full sm:w-auto"
               >
-                <a
-                  href="https://wa.me/918333833659?text=Hi! I'm interested in the Sardar Cafe franchise opportunity."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Enquire Now
-                </a>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="text-base border-white text-white hover:bg-white hover:text-foreground">
-                <Link to="/contact">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Us
-                </Link>
-              </Button>
+                <MessageCircle className="h-5 w-5 flex-shrink-0" />
+                <span className="whitespace-normal sm:whitespace-nowrap">Enquire Now</span>
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white bg-transparent px-4 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-white hover:text-foreground w-full sm:w-auto"
+              >
+                <Phone className="h-5 w-5 flex-shrink-0" />
+                <span className="whitespace-normal sm:whitespace-nowrap">Call Us</span>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -328,31 +324,22 @@ const Franchise = () => {
               team today for a detailed discussion.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="text-base border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent"
+              <a
+                href="https://wa.me/918333833659?text=Hi! I'm interested in the Sardar Cafe franchise opportunity. Please share more details."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white/90 bg-transparent px-4 sm:px-8 py-3 text-sm sm:text-base font-semibold text-white transition-colors hover:bg-white hover:text-accent dark:border-accent-foreground dark:text-accent-foreground dark:hover:bg-accent-foreground dark:hover:text-accent w-full sm:w-auto"
               >
-                <a
-                  href="https://wa.me/918333833659?text=Hi! I'm interested in the Sardar Cafe franchise opportunity. Please share more details."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  WhatsApp Enquiry
-                </a>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                className="text-base bg-accent-foreground text-accent hover:bg-accent-foreground/90"
+                <MessageCircle className="h-5 w-5 flex-shrink-0" />
+                <span className="whitespace-normal sm:whitespace-nowrap">WhatsApp Enquiry</span>
+              </a>
+              <a
+                href="tel:+918333833659"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-4 sm:px-8 py-3 text-sm sm:text-base font-semibold text-accent transition-colors hover:bg-white/90 dark:bg-accent-foreground dark:text-accent dark:hover:bg-accent-foreground/90 w-full sm:w-auto"
               >
-                <a href="tel:+918333833659">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call: +91 83338 33659
-                </a>
-              </Button>
+                <Phone className="h-5 w-5 flex-shrink-0" />
+                <span className="whitespace-normal sm:whitespace-nowrap">Call Us</span>
+              </a>
             </div>
           </motion.div>
         </div>
