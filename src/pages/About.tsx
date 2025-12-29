@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Heart, Target, Award, Users, Coffee, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 
 const values = [
   {
@@ -50,6 +51,12 @@ const itemVariants = {
 const About = () => {
   return (
     <>
+      <SEO
+        title="About Us - Sardar Cafe | Our Story & Mission"
+        description="Learn about Sardar Cafe's journey from a small kitchen to a beloved neighborhood cafe in Hyderabad. Discover our passion for quality coffee, traditional recipes, and community building since 2018."
+        keywords="Sardar Cafe about, Sardar Cafe story, cafe history Hyderabad, coffee shop story, Sardar Cafe mission, cafe values, quality coffee Hyderabad, traditional chai cafe, community cafe, Sardar Cafe journey"
+        url="https://sardarcafe.com/about"
+      />
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 overflow-hidden">
         <div

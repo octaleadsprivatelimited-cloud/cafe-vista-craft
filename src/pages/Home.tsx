@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import franchiseImage from "@/assets/jpeg-optimizer_IMG_20250710_151954308_HDR.jpg";
+import { SEO } from "@/components/SEO";
 
 const featuredItems = [
   {
@@ -120,6 +121,12 @@ const Home = () => {
 
   return (
     <>
+      <SEO
+        title="Sardar Cafe - Authentic Chai & Coffee in Hyderabad | Miyapur"
+        description="Experience authentic Indian chai and premium coffee at Sardar Cafe in Miyapur, Hyderabad. Traditional masala chai, Irani chai, kulhad chai, samosa, and more. Visit us at Hafeezpet or order via WhatsApp!"
+        keywords="Sardar Cafe, chai cafe Hyderabad, masala chai, Irani chai, kulhad chai, coffee shop Miyapur, best chai in Hyderabad, traditional Indian chai, cafe near me, Hafeezpet cafe, chai delivery, coffee delivery, Sardar Cafe franchise, authentic chai, Hyderabad cafe, Miyapur cafe, Sardar Cafe menu, chai near me, coffee near me"
+        url="https://sardarcafe.com"
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         <div

@@ -15,6 +15,7 @@ import {
   ArrowRight,
   MessageCircle,
 } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const benefits = [
   {
@@ -71,6 +72,12 @@ const itemVariants = {
 const Franchise = () => {
   return (
     <>
+      <SEO
+        title="Franchise Opportunity - Sardar Cafe | Own a Cafe Franchise"
+        description="Join Sardar Cafe franchise opportunity. Investment starting from ₹15 Lakhs, proven business model with 18-24 months ROI. Complete training, marketing support, and comprehensive setup assistance. Start your entrepreneurial journey today!"
+        keywords="Sardar Cafe franchise, cafe franchise opportunity, chai cafe franchise, coffee shop franchise, franchise investment, cafe business opportunity, Sardar Cafe franchise cost, cafe franchise India, Hyderabad cafe franchise, low investment franchise"
+        url="https://sardarcafe.com/franchise"
+      />
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 overflow-hidden">
         <div

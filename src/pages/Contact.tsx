@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { SEO } from "@/components/SEO";
 
 const contactInfo = [
   {
@@ -94,6 +95,12 @@ const Contact = () => {
 
   return (
     <>
+      <SEO
+        title="Contact Us - Sardar Cafe | Visit Us in Miyapur, Hyderabad"
+        description="Contact Sardar Cafe in Miyapur, Hyderabad. Visit us at Plot number 8-415/73, Manjeera Pipeline Rd, Sapthagiri Colony, Hafeezpet. Call +91 83338 33659 or message us on WhatsApp. Open Mon-Fri 7AM-10PM, Sat-Sun 8AM-11PM."
+        keywords="Sardar Cafe contact, Sardar Cafe address, Sardar Cafe phone number, Sardar Cafe location, cafe contact Hyderabad, Miyapur cafe contact, Hafeezpet cafe, Sardar Cafe WhatsApp, cafe near me contact, Sardar Cafe directions"
+        url="https://sardarcafe.com/contact"
+      />
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 overflow-hidden">
         <div

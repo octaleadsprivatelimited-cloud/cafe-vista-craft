@@ -2,11 +2,18 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Twitter } from "lucide-react";
 import logo from "@/assets/logo.png";
 
-const quickLinks = [
+interface QuickLink {
+  name: string;
+  path: string;
+  external?: boolean;
+}
+
+const quickLinks: QuickLink[] = [
   { name: "Home", path: "/" },
   { name: "Menu", path: "/menu" },
   { name: "About Us", path: "/about" },
   { name: "Contact", path: "/contact" },
+  { name: "Sitemap", path: "/sitemap.xml", external: true },
 ];
 
 const socialLinks = [
@@ -60,12 +67,21 @@ export const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.path}
+                      className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

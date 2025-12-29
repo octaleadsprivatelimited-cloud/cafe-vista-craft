@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Calendar, Clock, User, ArrowLeft, Share2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getBlogPostBySlug, getRelatedPosts } from "@/data/blogPosts";
+import { SEO } from "@/components/SEO";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -12,15 +13,22 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-          <p className="text-muted-foreground mb-8">The blog post you're looking for doesn't exist.</p>
-          <Button asChild>
-            <Link to="/blog">Back to Blog</Link>
-          </Button>
+      <>
+        <SEO
+          title="Blog Post Not Found - Sardar Cafe"
+          description="The blog post you're looking for doesn't exist. Browse our other coffee articles and brewing guides."
+          url="https://sardarcafe.com/blog"
+        />
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
+            <p className="text-muted-foreground mb-8">The blog post you're looking for doesn't exist.</p>
+            <Button asChild>
+              <Link to="/blog">Back to Blog</Link>
+            </Button>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -44,6 +52,14 @@ const BlogPost = () => {
 
   return (
     <>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        keywords={`${post.title}, ${post.category}, coffee blog, ${post.author}, Sardar Cafe blog, coffee tips, brewing guide, coffee article`}
+        url={`https://sardarcafe.com/blog/${post.slug}`}
+        image={post.image}
+        type="article"
+      />
       {/* Hero Image */}
       <section className="relative h-[40vh] min-h-[300px] overflow-hidden">
         <div

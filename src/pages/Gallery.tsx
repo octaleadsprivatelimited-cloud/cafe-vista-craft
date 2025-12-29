@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
 
 // Import all gallery images
 import chaiImage1 from "@/assets/gallery-chai-1.jpg";
@@ -233,6 +234,12 @@ const Gallery = () => {
 
   return (
     <>
+      <SEO
+        title="Gallery - Sardar Cafe | Photos & Visual Journey"
+        description="Take a visual journey through Sardar Cafe. View photos of our cozy interior, delicious chai, coffee, beverages, and the warm community atmosphere. Experience the essence of Sardar Cafe through our gallery."
+        keywords="Sardar Cafe gallery, cafe photos, cafe interior photos, chai photos, coffee photos, cafe images, Sardar Cafe pictures, cafe ambiance, cafe atmosphere, Hyderabad cafe photos"
+        url="https://sardarcafe.com/gallery"
+      />
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 overflow-hidden">
         <div

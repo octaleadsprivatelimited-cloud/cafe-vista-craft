@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Globe, Thermometer, Timer, Award, Leaf, Coffee, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 
 const origins = [
   {
@@ -100,6 +101,12 @@ const itemVariants = {
 const OurCoffee = () => {
   return (
     <>
+      <SEO
+        title="Our Coffee - Sardar Cafe | Premium Coffee Origins & Brewing Methods"
+        description="Discover Sardar Cafe's premium coffee selection. Learn about our coffee origins from Coorg, Wayanad, Nilgiris, and Ethiopia. Explore our brewing methods including espresso, pour over, cold brew, and French press. Direct trade, organic, specialty grade coffee."
+        keywords="Sardar Cafe coffee, premium coffee, coffee origins, Indian coffee, Coorg coffee, specialty coffee, espresso, pour over, cold brew, French press, direct trade coffee, organic coffee, coffee brewing methods, Sardar Cafe coffee beans"
+        url="https://sardarcafe.com/our-coffee"
+      />
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 overflow-hidden">
         <div

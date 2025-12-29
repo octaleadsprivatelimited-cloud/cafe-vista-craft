@@ -4,6 +4,7 @@ import { Calendar, Clock, ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { blogPosts } from "@/data/blogPosts";
+import { SEO } from "@/components/SEO";
 
 const categories = ["All", "Brewing Guide", "Coffee Origins", "Coffee 101", "Sustainability"];
 
@@ -51,6 +52,12 @@ const Blog = () => {
   };
   return (
     <>
+      <SEO
+        title="Blog - Sardar Cafe | Coffee Stories, Tips & Brewing Guides"
+        description="Read our coffee blog for expert brewing guides, coffee origin stories, latte art tutorials, and coffee tips. Learn how to make perfect espresso, understand coffee origins, and discover sustainable coffee practices."
+        keywords="coffee blog, brewing guides, coffee tips, espresso guide, latte art, coffee origins, Indian coffee, cold brew guide, coffee to water ratio, sustainable coffee, coffee articles, coffee education, Sardar Cafe blog"
+        url="https://sardarcafe.com/blog"
+      />
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 overflow-hidden">
         <div

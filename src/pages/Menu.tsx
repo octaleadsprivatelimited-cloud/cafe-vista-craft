@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Coffee, Milk, IceCream, GlassWater, Sparkles, CupSoda, Wine } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 // Import category images
 import teaImage from "@/assets/menu-tea.jpg";
@@ -113,6 +114,12 @@ const Menu = () => {
 
   return (
     <>
+      <SEO
+        title="Menu - Sardar Cafe | Tea, Coffee, Shakes & More"
+        description="Explore our complete menu at Sardar Cafe. Traditional masala chai, Irani chai, coffee, thick shakes, mocktails, lassi, and special drinks. Affordable prices starting from ₹15. Order now via WhatsApp!"
+        keywords="Sardar Cafe menu, chai menu, coffee menu, thick shake menu, mocktail menu, lassi menu, tea prices, coffee prices, menu prices, Sardar Cafe menu card, cafe menu Hyderabad, Miyapur cafe menu, Hafeezpet cafe menu"
+        url="https://sardarcafe.com/menu"
+      />
       {/* Hero Section */}
       <section className="relative py-12 md:py-16 overflow-hidden">
         <div
