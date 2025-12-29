@@ -13,16 +13,28 @@ export const SEO = ({
   title = "Sardar Cafe - Authentic Chai & Coffee in Hyderabad | Miyapur",
   description = "Experience authentic Indian chai and premium coffee at Sardar Cafe in Miyapur, Hyderabad. Traditional masala chai, Irani chai, kulhad chai, and more. Visit us or order via WhatsApp!",
   keywords = "Sardar Cafe, chai cafe Hyderabad, masala chai, Irani chai, kulhad chai, coffee shop Miyapur, best chai in Hyderabad, traditional Indian chai, cafe near me, Hafeezpet cafe, chai delivery, coffee delivery, Sardar Cafe franchise, authentic chai, Hyderabad cafe",
-  image = "https://sardarcafe.com/logo.png",
+  image,
   url = "https://sardarcafe.com",
   type = "website",
 }: SEOProps) => {
   const fullTitle = title.includes("Sardar Cafe") ? title : `${title} | Sardar Cafe`;
   const fullUrl = url.startsWith("https://") ? url : `https://sardarcafe.com${url}`;
-  const fullImage = image.startsWith("https://") ? image : `https://sardarcafe.com${image}`;
+  // Always use logo as default image, unless explicitly overridden
+  const defaultImage = "https://sardarcafe.com/logo.png";
+  const fullImage = image 
+    ? (image.startsWith("https://") ? image : `https://sardarcafe.com${image}`)
+    : defaultImage;
 
   return (
     <Helmet>
+      {/* Favicon */}
+      <link rel="icon" type="image/png" href="/logo.png?t=20241210" />
+      <link rel="shortcut icon" type="image/png" href="/logo.png?t=20241210" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/logo.png?t=20241210" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/logo.png?t=20241210" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/logo.png?t=20241210" />
+      <link rel="icon" href="/favicon.ico?t=20241210" />
+      
       {/* Primary Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="title" content={fullTitle} />

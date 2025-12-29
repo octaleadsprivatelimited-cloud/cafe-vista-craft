@@ -13,7 +13,7 @@ const quickLinks: QuickLink[] = [
   { name: "Menu", path: "/menu" },
   { name: "About Us", path: "/about" },
   { name: "Contact", path: "/contact" },
-  { name: "Sitemap", path: "/sitemap.xml", external: true },
+  { name: "Sitemap", path: "/sitemap" },
 ];
 
 const socialLinks = [
@@ -146,14 +146,6 @@ export const Footer = () => {
               </a>
             </span>
           </p>
-          <div className="flex gap-6 text-sm">
-            <Link to="/privacy" className="text-primary-foreground/60 hover:text-primary-foreground">
-              Privacy Policy
-            </Link>
-            <Link to="/terms" className="text-primary-foreground/60 hover:text-primary-foreground">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

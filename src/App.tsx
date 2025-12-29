@@ -16,6 +16,7 @@ import Gallery from "@/pages/Gallery";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
 import Franchise from "@/pages/Franchise";
+import Sitemap from "@/pages/Sitemap";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +41,7 @@ const App = () => (
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />
                 <Route path="/franchise" element={<Franchise />} />
+                <Route path="/sitemap" element={<Sitemap />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Layout>

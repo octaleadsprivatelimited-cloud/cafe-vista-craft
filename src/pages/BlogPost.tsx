@@ -57,7 +57,6 @@ const BlogPost = () => {
         description={post.excerpt}
         keywords={`${post.title}, ${post.category}, coffee blog, ${post.author}, Sardar Cafe blog, coffee tips, brewing guide, coffee article`}
         url={`https://sardarcafe.com/blog/${post.slug}`}
-        image={post.image}
         type="article"
       />
       {/* Hero Image */}
