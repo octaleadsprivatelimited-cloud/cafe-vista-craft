@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Coffee, Milk, IceCream, GlassWater, Sparkles, CupSoda, Wine } from "lucide-react";
+import { Coffee, Milk, IceCream, GlassWater, Sparkles, CupSoda, Wine, UtensilsCrossed, Plus, Award, Building2, Star } from "lucide-react";
 import { SEO } from "@/components/SEO";
 
 // Import category images
-import teaImage from "@/assets/menu-tea.jpg";
+import teaImage from "@/assets/menu-tea.webp";
 import coffeeImage from "@/assets/menu-coffee.jpg";
 import milkImage from "@/assets/menu-milk.jpg";
 import thickShakeImage from "@/assets/menu-thick-shake.jpg";
@@ -12,6 +12,12 @@ import mocktailImage from "@/assets/menu-mocktail.jpg";
 import specialImage from "@/assets/menu-special.jpg";
 import milkShakeImage from "@/assets/menu-milkshake.jpg";
 import lassiImage from "@/assets/menu-lassi.jpg";
+import sandwichImage from "@/assets/menu-sandwich.avif";
+import tandooriChickenImage from "@/assets/menu-tandoori-chicken.avif";
+import mayonnaiseImage from "@/assets/menu-mayonnaise.avif";
+import sweetCornCupImage from "@/assets/menu-sweet-corn-cup.webp";
+import breadOmelettesImage from "@/assets/menu-bread-omelettes.jpg";
+import frenchFriesImage from "@/assets/menu-french-fries.avif";
 
 const categoryImages: Record<string, string> = {
   tea: teaImage,
@@ -22,6 +28,12 @@ const categoryImages: Record<string, string> = {
   "special-drinks": specialImage,
   "milk-shake": milkShakeImage,
   lassi: lassiImage,
+  "special-snacks-veg": sandwichImage,
+  "special-snacks-nonveg": tandooriChickenImage,
+  "add-ons": mayonnaiseImage,
+  "sweet-corn-cup": sweetCornCupImage,
+  "bread-omelettes": breadOmelettesImage,
+  "french-fries": frenchFriesImage,
 };
 
 const menuCategories = [
@@ -33,6 +45,12 @@ const menuCategories = [
   { id: "special-drinks", name: "Sardar Cafe Special", icon: Sparkles },
   { id: "milk-shake", name: "Milk Shake", icon: CupSoda },
   { id: "lassi", name: "Lassi", icon: Wine },
+  { id: "special-snacks-veg", name: "Special Snacks (Veg)", icon: UtensilsCrossed },
+  { id: "special-snacks-nonveg", name: "Special Snacks (Non-Veg)", icon: UtensilsCrossed },
+  { id: "add-ons", name: "Add-Ons", icon: Plus },
+  { id: "sweet-corn-cup", name: "Special Sweet Corn Cup", icon: Star },
+  { id: "bread-omelettes", name: "Bread Omelettes", icon: Building2 },
+  { id: "french-fries", name: "French Fries", icon: Award },
 ];
 
 const menuItems = {
@@ -93,6 +111,39 @@ const menuItems = {
     { name: "Mango Lassi", description: "Creamy mango flavored lassi", price: "₹40" },
     { name: "Banana Lassi", description: "Fresh banana blended lassi", price: "₹40" },
     { name: "Strawberry Lassi", description: "Fruity strawberry lassi", price: "₹40" },
+  ],
+  "special-snacks-veg": [
+    { name: "Pure Veg Sandwich", description: "Delicious vegetarian sandwich", price: "₹60" },
+    { name: "Veg Tandoori", description: "Spiced tandoori style vegetarian snack", price: "₹70" },
+    { name: "Sweet Corn", description: "Fresh sweet corn preparation", price: "₹70" },
+    { name: "Paneer", description: "Creamy paneer snack", price: "₹80" },
+    { name: "Sweet Corn with Paneer", description: "Sweet corn combined with paneer", price: "₹90" },
+  ],
+  "special-snacks-nonveg": [
+    { name: "Egg", description: "Delicious egg preparation", price: "₹60" },
+    { name: "Chicken", description: "Tender chicken snack", price: "₹70" },
+    { name: "Tandoori Chicken", description: "Spiced tandoori style chicken", price: "₹80" },
+    { name: "Sweet Corn with Chicken", description: "Sweet corn combined with chicken", price: "₹80" },
+    { name: "Paneer with Chicken", description: "Paneer and chicken combination", price: "₹80" },
+    { name: "Sweet Corn Paneer & Chicken", description: "Triple combination of sweet corn, paneer and chicken", price: "₹100" },
+  ],
+  "add-ons": [
+    { name: "Extra Cheese OR Mayonnaise", description: "Add extra cheese or mayonnaise to your snack", price: "₹20" },
+  ],
+  "sweet-corn-cup": [
+    { name: "Salt with Butter Sweet Corn", description: "Sweet corn with salt and butter", price: "₹30" },
+    { name: "Peri Peri with Butter Sweet Corn", description: "Spicy peri peri sweet corn with butter", price: "₹40" },
+    { name: "Peri Peri Butter Mayonnaise Sweet Corn", description: "Peri peri sweet corn with butter and mayonnaise", price: "₹50" },
+  ],
+  "bread-omelettes": [
+    { name: "Double Egg", description: "Bread omelette with double eggs", price: "₹50" },
+    { name: "Single Egg", description: "Bread omelette with single egg", price: "₹35" },
+    { name: "Sweet Corn", description: "Bread omelette with sweet corn", price: "₹40" },
+    { name: "Paneer", description: "Bread omelette with paneer", price: "₹50" },
+  ],
+  "french-fries": [
+    { name: "Salt French Fries 150 gm", description: "Classic salted french fries (150 gm)", price: "₹70" },
+    { name: "Peri Peri Masala 150 gm", description: "Spicy peri peri masala french fries (150 gm)", price: "₹80" },
   ],
 };
 
@@ -185,8 +236,8 @@ const Menu = () => {
           >
             <div className="relative w-full max-w-md overflow-hidden rounded-2xl shadow-xl">
               <img
-                src={categoryImages[activeCategory]}
-                alt={menuCategories.find(c => c.id === activeCategory)?.name}
+                src={categoryImages[activeCategory] || specialImage}
+                alt={menuCategories.find(c => c.id === activeCategory)?.name || "Menu"}
                 className="w-full h-64 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -206,7 +257,7 @@ const Menu = () => {
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
-            {menuItems[activeCategory as keyof typeof menuItems].map((item, index) => (
+            {(menuItems[activeCategory as keyof typeof menuItems] || []).map((item, index) => (
               <motion.div
                 key={item.name}
                 variants={itemVariants}
