@@ -364,7 +364,7 @@ const Home = () => {
                     Learn More
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent">
+                <Button asChild variant="outline" size="lg" className="border-accent-foreground text-foreground hover:bg-accent-foreground hover:text-accent">
                   <a
                     href="https://wa.me/918333833659?text=Hi! I'm interested in the Sardar Cafe franchise opportunity."
                     target="_blank"
