@@ -167,7 +167,7 @@ const Menu = () => {
     <>
       <SEO
         title="Menu - Sardar Cafe | Tea, Coffee, Shakes & More"
-        description="Explore our complete menu at Sardar Cafe. Traditional masala chai, Irani chai, coffee, thick shakes, mocktails, lassi, and special drinks. Affordable prices starting from ₹15. Order now via WhatsApp!"
+        description="Explore our complete menu at Sardar Cafe. Traditional masala chai, coffee, thick shakes, mocktails, lassi, and special drinks. Affordable prices starting from ₹15. Order now via WhatsApp!"
         keywords="Sardar Cafe menu, chai menu, coffee menu, thick shake menu, mocktail menu, lassi menu, tea prices, coffee prices, menu prices, Sardar Cafe menu card, cafe menu Hyderabad, Miyapur cafe menu, Hafeezpet cafe menu"
         url="https://sardarcafe.com/menu"
       />

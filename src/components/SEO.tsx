@@ -11,8 +11,8 @@ interface SEOProps {
 
 export const SEO = ({
   title = "Sardar Cafe - Authentic Chai & Coffee in Hyderabad | Miyapur",
-  description = "Experience authentic Indian chai and premium coffee at Sardar Cafe in Miyapur, Hyderabad. Traditional masala chai, Irani chai, kulhad chai, and more. Visit us or order via WhatsApp!",
-  keywords = "Sardar Cafe, chai cafe Hyderabad, masala chai, Irani chai, kulhad chai, coffee shop Miyapur, best chai in Hyderabad, traditional Indian chai, cafe near me, Hafeezpet cafe, chai delivery, coffee delivery, Sardar Cafe franchise, authentic chai, Hyderabad cafe",
+  description = "Experience authentic Indian chai and premium coffee at Sardar Cafe in Miyapur, Hyderabad. Traditional masala chai, kulhad chai, and more. Visit us or order via WhatsApp!",
+  keywords = "Sardar Cafe, chai cafe Hyderabad, masala chai, kulhad chai, coffee shop Miyapur, best chai in Hyderabad, traditional Indian chai, cafe near me, Hafeezpet cafe, chai delivery, coffee delivery, Sardar Cafe franchise, authentic chai, Hyderabad cafe",
   image,
   url = "https://sardarcafe.com",
   type = "website",

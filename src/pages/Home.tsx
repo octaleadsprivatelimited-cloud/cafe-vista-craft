@@ -30,12 +30,6 @@ const featuredItems = [
     image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=400&fit=crop",
   },
   {
-    name: "Irani Chai",
-    description: "Hyderabadi style creamy layered tea",
-    price: "₹40",
-    image: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=400&h=400&fit=crop",
-  },
-  {
     name: "Kulhad Chai",
     description: "Earthy clay pot chai with authentic taste",
     price: "₹35",
@@ -77,7 +71,7 @@ const testimonials = [
   {
     name: "Rahul Verma",
     role: "Chai Enthusiast",
-    content: "I've been to many chai stalls in Hyderabad, and Sardar Cafe stands out. Their Irani chai is simply unmatched in quality.",
+    content: "I've been to many chai stalls in Hyderabad, and Sardar Cafe stands out. Their masala chai is simply unmatched in quality.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
   },
   {
@@ -123,8 +117,8 @@ const Home = () => {
     <>
       <SEO
         title="Sardar Cafe - Authentic Chai & Coffee in Hyderabad | Miyapur"
-        description="Experience authentic Indian chai and premium coffee at Sardar Cafe in Miyapur, Hyderabad. Traditional masala chai, Irani chai, kulhad chai, samosa, and more. Visit us at Hafeezpet or order via WhatsApp!"
-        keywords="Sardar Cafe, chai cafe Hyderabad, masala chai, Irani chai, kulhad chai, coffee shop Miyapur, best chai in Hyderabad, traditional Indian chai, cafe near me, Hafeezpet cafe, chai delivery, coffee delivery, Sardar Cafe franchise, authentic chai, Hyderabad cafe, Miyapur cafe, Sardar Cafe menu, chai near me, coffee near me"
+        description="Experience authentic Indian chai and premium coffee at Sardar Cafe in Miyapur, Hyderabad. Traditional masala chai, kulhad chai, samosa, and more. Visit us at Hafeezpet or order via WhatsApp!"
+        keywords="Sardar Cafe, chai cafe Hyderabad, masala chai, kulhad chai, coffee shop Miyapur, best chai in Hyderabad, traditional Indian chai, cafe near me, Hafeezpet cafe, chai delivery, coffee delivery, Sardar Cafe franchise, authentic chai, Hyderabad cafe, Miyapur cafe, Sardar Cafe menu, chai near me, coffee near me"
         url="https://sardarcafe.com"
       />
       {/* Hero Section */}
@@ -246,15 +240,15 @@ const Home = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={containerVariants}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="flex flex-wrap justify-center gap-6"
           >
             {featuredItems.map((item, index) => (
               <motion.div
                 key={item.name}
                 variants={itemVariants}
-                className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm"
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.name}
