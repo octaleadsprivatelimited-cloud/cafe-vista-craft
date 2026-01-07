@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import franchiseImage from "@/assets/jpeg-optimizer_IMG_20250710_151954308_HDR.jpg";
+import masalaChaiImage from "@/assets/Masala Chai.webp";
+import kulhadChaiImage from "@/assets/Kulhad Chai.webp";
 import { SEO } from "@/components/SEO";
 
 const featuredItems = [
@@ -27,13 +29,13 @@ const featuredItems = [
     name: "Masala Chai",
     description: "Aromatic tea with traditional Indian spices",
     price: "₹30",
-    image: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400&h=400&fit=crop",
+    image: masalaChaiImage,
   },
   {
     name: "Kulhad Chai",
     description: "Earthy clay pot chai with authentic taste",
     price: "₹35",
-    image: "https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=400&h=400&fit=crop",
+    image: kulhadChaiImage,
   },
   {
     name: "Samosa",

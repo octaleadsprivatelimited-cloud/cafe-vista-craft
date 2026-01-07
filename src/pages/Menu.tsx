@@ -4,7 +4,7 @@ import { Coffee, Milk, IceCream, GlassWater, Sparkles, CupSoda, Wine, UtensilsCr
 import { SEO } from "@/components/SEO";
 
 // Import category images
-import teaImage from "@/assets/menu-tea.webp";
+import teaImage from "@/assets/Masala Chai.webp";
 import coffeeImage from "@/assets/menu-coffee.jpg";
 import milkImage from "@/assets/menu-milk.jpg";
 import thickShakeImage from "@/assets/menu-thick-shake.jpg";
@@ -70,7 +70,7 @@ const menuItems = {
     { name: "Coffee", description: "Classic freshly brewed coffee", price: "₹20" },
     { name: "Black Coffee", description: "Strong black coffee without milk", price: "₹20" },
     { name: "Chocolate Coffee", description: "Rich coffee with chocolate flavor", price: "₹30" },
-    { name: "Gold Coffee", description: "Premium signature gold coffee", price: "₹90" },
+    { name: "Cold Coffee", description: "Refreshing chilled coffee served over ice", price: "₹90" },
   ],
   milk: [
     { name: "Milk", description: "Fresh warm milk", price: "₹15" },
@@ -161,8 +161,6 @@ const itemVariants = {
 };
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState("tea");
-
   return (
     <>
       <SEO
@@ -172,106 +170,76 @@ const Menu = () => {
         url="https://sardarcafe.com/menu"
       />
       {/* Hero Section */}
-      <section className="relative py-12 md:py-16 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920&h=600&fit=crop')",
-          }}
-        >
-          <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="container-custom relative z-10">
+      <section className="section-padding pt-10 pb-6">
+        <div className="container-custom text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
+            transition={{ duration: 0.5 }}
           >
-            <span className="text-cream font-medium">Discover</span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mt-2 mb-4 text-white">
-              Our Menu
-            </h1>
-            <p className="text-lg text-white/80">
-              Explore our carefully curated selection of handcrafted beverages and delicious treats, 
-              made with love and the finest ingredients.
+            <p className="text-sm tracking-[0.2em] uppercase text-muted-foreground">
+              Sardar Cafe
             </p>
+            <h1 className="text-3xl md:text-4xl font-serif font-bold mt-2">
+              Menu
+            </h1>
           </motion.div>
         </div>
       </section>
 
-      {/* Menu Section */}
-      <section className="section-padding">
+      {/* Menu Section - all categories as cards */}
+      <section className="pb-16 md:pb-24">
         <div className="container-custom">
-          {/* Category Tabs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-3 mb-12"
-          >
-            {menuCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-5 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? "bg-primary text-primary-foreground shadow-lg"
-                    : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                }`}
-              >
-                <category.icon className="h-4 w-4" />
-                {category.name}
-              </button>
-            ))}
-          </motion.div>
-
-          {/* Category Image */}
-          <motion.div
-            key={`image-${activeCategory}`}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
-            className="mb-10 flex justify-center"
-          >
-            <div className="relative w-full max-w-md overflow-hidden rounded-2xl shadow-xl">
-              <img
-                src={categoryImages[activeCategory] || specialImage}
-                alt={menuCategories.find(c => c.id === activeCategory)?.name || "Menu"}
-                className="w-full h-64 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <h2 className="text-2xl font-serif font-bold text-white">
-                  {menuCategories.find(c => c.id === activeCategory)?.name}
-                </h2>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Menu Items Grid */}
-          <motion.div
-            key={activeCategory}
             initial="hidden"
             animate="visible"
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
           >
-            {(menuItems[activeCategory as keyof typeof menuItems] || []).map((item, index) => (
-              <motion.div
-                key={item.name}
-                variants={itemVariants}
-                className="group bg-card rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-border/50"
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="font-serif text-xl font-semibold group-hover:text-primary transition-colors">
-                    {item.name}
-                  </h3>
-                  <span className="text-lg font-bold text-primary">{item.price}</span>
-                </div>
-                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-              </motion.div>
-            ))}
+            {menuCategories.map((category) => {
+              const items = menuItems[category.id as keyof typeof menuItems] || [];
+              const bgImage = categoryImages[category.id] || specialImage;
+
+              return (
+                <motion.div
+                  key={category.id}
+                  variants={itemVariants}
+                  className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+                >
+                  {/* Background image */}
+                  <img
+                    src={bgImage}
+                    alt={category.name}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/65" />
+
+                  {/* Content */}
+                  <div className="relative h-full flex flex-col px-4 py-4 sm:px-5 sm:py-5">
+                    <div className="flex items-center justify-between mb-2">
+                      <h2 className="text-sm sm:text-base font-semibold text-white tracking-wide uppercase">
+                        {category.name}
+                      </h2>
+                    </div>
+
+                    <div className="mt-1 space-y-1 text-xs sm:text-[0.75rem] leading-snug text-white/90">
+                      {items.map((item) => (
+                        <div
+                          key={item.name}
+                          className="flex items-center justify-between gap-2 border-b border-white/10 last:border-b-0 py-0.5"
+                        >
+                          <span className="truncate">{item.name}</span>
+                          <span className="ml-2 flex-shrink-0 text-[0.7rem] font-semibold text-yellow-300">
+                            {item.price}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
