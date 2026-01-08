@@ -18,32 +18,61 @@ import {
   Heart,
   Sparkles,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import franchiseImage from "@/assets/jpeg-optimizer_IMG_20250710_151954308_HDR.jpg";
-import masalaChaiImage from "@/assets/Masala Chai.webp";
-import kulhadChaiImage from "@/assets/Kulhad Chai.webp";
 import { SEO } from "@/components/SEO";
 
-const featuredItems = [
-  {
-    name: "Masala Chai",
-    description: "Aromatic tea with traditional Indian spices",
-    price: "₹30",
-    image: masalaChaiImage,
-  },
-  {
-    name: "Kulhad Chai",
-    description: "Earthy clay pot chai with authentic taste",
-    price: "₹35",
-    image: kulhadChaiImage,
-  },
-  {
-    name: "Samosa",
-    description: "Crispy pastry filled with spiced potatoes",
-    price: "₹20",
-    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&h=400&fit=crop",
-  },
+// Import menu category images
+import teaImage from "@/assets/Masala Chai.webp";
+import coffeeImage from "@/assets/menu-coffee.jpg";
+import milkImage from "@/assets/menu-milk.jpg";
+import thickShakeImage from "@/assets/menu-thick-shake.jpg";
+import mocktailImage from "@/assets/menu-mocktail.jpg";
+import specialImage from "@/assets/menu-special.jpg";
+import milkShakeImage from "@/assets/menu-milkshake.jpg";
+import lassiImage from "@/assets/menu-lassi.jpg";
+import sandwichImage from "@/assets/menu-sandwich.avif";
+import tandooriChickenImage from "@/assets/menu-tandoori-chicken.avif";
+import mayonnaiseImage from "@/assets/menu-mayonnaise.avif";
+import sweetCornCupImage from "@/assets/menu-sweet-corn-cup.webp";
+import breadOmelettesImage from "@/assets/menu-bread-omelettes.jpg";
+import frenchFriesImage from "@/assets/menu-french-fries.avif";
+
+// Menu categories matching Menu.tsx
+const menuCategories = [
+  { id: "tea", name: "Tea", icon: Coffee },
+  { id: "coffee", name: "Coffee", icon: Coffee },
+  { id: "milk", name: "Milk", icon: Coffee },
+  { id: "thick-shake", name: "Thick Shake", icon: Coffee },
+  { id: "mocktail", name: "Mocktail", icon: Coffee },
+  { id: "special-drinks", name: "Sardar Cafe Special", icon: Coffee },
+  { id: "milk-shake", name: "Milk Shake", icon: Coffee },
+  { id: "lassi", name: "Lassi", icon: Coffee },
+  { id: "special-snacks-veg", name: "Special Snacks (Veg)", icon: Coffee },
+  { id: "special-snacks-nonveg", name: "Special Snacks (Non-Veg)", icon: Coffee },
+  { id: "add-ons", name: "Add-Ons", icon: Coffee },
+  { id: "sweet-corn-cup", name: "Special Sweet Corn Cup", icon: Coffee },
+  { id: "bread-omelettes", name: "Bread Omelettes", icon: Coffee },
+  { id: "french-fries", name: "French Fries", icon: Coffee },
 ];
+
+const categoryImages: Record<string, string> = {
+  tea: teaImage,
+  coffee: coffeeImage,
+  milk: milkImage,
+  "thick-shake": thickShakeImage,
+  mocktail: mocktailImage,
+  "special-drinks": specialImage,
+  "milk-shake": milkShakeImage,
+  lassi: lassiImage,
+  "special-snacks-veg": sandwichImage,
+  "special-snacks-nonveg": tandooriChickenImage,
+  "add-ons": mayonnaiseImage,
+  "sweet-corn-cup": sweetCornCupImage,
+  "bread-omelettes": breadOmelettesImage,
+  "french-fries": frenchFriesImage,
+};
 
 const features = [
   {
@@ -106,6 +135,7 @@ const itemVariants = {
 
 const Home = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const navigate = useNavigate();
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -113,6 +143,17 @@ const Home = () => {
 
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const handleCategoryClick = (categoryId: string) => {
+    navigate(`/menu#category-${categoryId}`);
+    // Scroll to category after navigation
+    setTimeout(() => {
+      const element = document.getElementById(`category-${categoryId}`);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
   };
 
   return (
@@ -219,7 +260,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Items */}
+      {/* Menu Categories */}
       <section className="section-padding bg-secondary/50">
         <div className="container-custom">
           <motion.div
@@ -230,10 +271,10 @@ const Home = () => {
             className="text-center mb-12"
           >
             <motion.span variants={itemVariants} className="text-primary font-medium">
-              Our Favorites
+              Explore Our Menu
             </motion.span>
             <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl font-serif font-bold mt-2">
-              Featured Drinks & Snacks
+              All Categories
             </motion.h2>
           </motion.div>
 
@@ -242,30 +283,34 @@ const Home = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={containerVariants}
-            className="flex flex-wrap justify-center gap-6"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
           >
-            {featuredItems.map((item, index) => (
-              <motion.div
-                key={item.name}
-                variants={itemVariants}
-                className="group bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
+            {menuCategories.map((category, index) => {
+              const bgImage = categoryImages[category.id] || specialImage;
+              return (
+                <motion.div
+                  key={category.id}
+                  variants={itemVariants}
+                  onClick={() => handleCategoryClick(category.id)}
+                  className="group relative aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+                >
+                  {/* Background image */}
                   <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    src={bgImage}
+                    alt={category.name}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                </div>
-                <div className="p-5">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="font-serif font-semibold text-lg">{item.name}</h3>
-                    <span className="text-primary font-semibold">{item.price}</span>
+                  {/* Dark overlay */}
+                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/60 transition-colors duration-300" />
+                  {/* Content */}
+                  <div className="relative h-full flex items-center justify-center p-4">
+                    <h3 className="text-white font-serif font-semibold text-sm sm:text-base text-center group-hover:scale-105 transition-transform duration-300">
+                      {category.name}
+                    </h3>
                   </div>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+            })}
           </motion.div>
 
           <motion.div

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Coffee, Milk, IceCream, GlassWater, Sparkles, CupSoda, Wine, UtensilsCrossed, Plus, Award, Building2, Star } from "lucide-react";
 import { SEO } from "@/components/SEO";
@@ -161,6 +162,21 @@ const itemVariants = {
 };
 
 const Menu = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to category if hash is present in URL
+    if (location.hash) {
+      const categoryId = location.hash.replace("#", "");
+      setTimeout(() => {
+        const element = document.getElementById(categoryId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
+
   return (
     <>
       <SEO
@@ -203,8 +219,9 @@ const Menu = () => {
               return (
                 <motion.div
                   key={category.id}
+                  id={`category-${category.id}`}
                   variants={itemVariants}
-                  className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300"
+                  className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 scroll-mt-20"
                 >
                   {/* Background image */}
                   <img
