@@ -21,11 +21,12 @@ import {
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import franchiseImage from "@/assets/jpeg-optimizer_IMG_20250710_151954308_HDR.jpg";
+import heroBackgroundImage from "@/assets/Home-hero.avif";
 import { SEO } from "@/components/SEO";
 
 // Import menu category images
 import teaImage from "@/assets/Masala Chai.webp";
-import coffeeImage from "@/assets/menu-coffee.jpg";
+import coffeeImage from "@/assets/Coffee.avif";
 import milkImage from "@/assets/menu-milk.jpg";
 import thickShakeImage from "@/assets/menu-thick-shake.jpg";
 import mocktailImage from "@/assets/menu-mocktail.jpg";
@@ -165,22 +166,22 @@ const Home = () => {
         url="https://sardarcafe.com"
       />
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=1920&h=1080&fit=crop')",
+            backgroundImage: `url(${heroBackgroundImage})`,
           }}
         >
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-black/75" />
         </div>
 
-        <div className="container-custom relative z-10">
+        <div className="container-custom relative z-10 flex justify-center lg:justify-end">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            className="max-w-2xl text-center lg:text-right"
           >
             <span className="inline-block px-4 py-2 rounded-full bg-white/20 text-white text-sm font-medium mb-6">
               Welcome to Sardar Cafe
@@ -194,7 +195,7 @@ const Home = () => {
               Experience the art of traditional Indian chai in a warm, inviting atmosphere. Every cup tells a story of quality, 
               passion, and heritage.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center lg:justify-end">
               <Button asChild size="lg" className="text-sm sm:text-base w-full sm:w-auto px-4 sm:px-8">
                 <Link to="/menu">
                   <span className="whitespace-normal sm:whitespace-nowrap">View Menu</span>
@@ -239,9 +240,9 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-primary text-primary-foreground">
+      <section className="py-6 bg-primary text-primary-foreground">
         <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -251,9 +252,9 @@ const Home = () => {
                 transition={{ delay: index * 0.1 }}
                 className="text-center"
               >
-                <stat.icon className="h-8 w-8 mx-auto mb-2 opacity-80" />
-                <div className="text-3xl md:text-4xl font-serif font-bold mb-1">{stat.value}</div>
-                <div className="text-primary-foreground/80 text-sm">{stat.label}</div>
+                <stat.icon className="h-6 w-6 mx-auto mb-1.5 opacity-80" />
+                <div className="text-2xl md:text-3xl font-serif font-bold mb-0.5">{stat.value}</div>
+                <div className="text-primary-foreground/80 text-xs">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -278,26 +279,25 @@ const Home = () => {
             </motion.h2>
           </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6"
-          >
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
             {menuCategories.map((category, index) => {
               const bgImage = categoryImages[category.id] || specialImage;
               return (
                 <motion.div
                   key={category.id}
-                  variants={itemVariants}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.3, delay: index * 0.03 }}
                   onClick={() => handleCategoryClick(category.id)}
-                  className="group relative aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+                  className="group relative aspect-square overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer bg-muted"
                 >
                   {/* Background image */}
                   <img
                     src={bgImage}
                     alt={category.name}
+                    loading="lazy"
+                    decoding="async"
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   {/* Dark overlay */}
@@ -311,7 +311,7 @@ const Home = () => {
                 </motion.div>
               );
             })}
-          </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0 }}

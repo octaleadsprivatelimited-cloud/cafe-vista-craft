@@ -6,7 +6,7 @@ import { SEO } from "@/components/SEO";
 
 // Import category images
 import teaImage from "@/assets/Masala Chai.webp";
-import coffeeImage from "@/assets/menu-coffee.jpg";
+import coffeeImage from "@/assets/Coffee.avif";
 import milkImage from "@/assets/menu-milk.jpg";
 import thickShakeImage from "@/assets/menu-thick-shake.jpg";
 import mocktailImage from "@/assets/menu-mocktail.jpg";
